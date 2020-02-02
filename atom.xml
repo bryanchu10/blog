@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/blog/"/>
-  <updated>2020-02-02T15:18:28.344Z</updated>
+  <updated>2020-02-02T16:50:10.603Z</updated>
   <id>http://yoursite.com/blog/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/blog/2020/02/02/hello-world/"/>
-    <id>http://yoursite.com/blog/2020/02/02/hello-world/</id>
-    <published>2020-02-02T15:18:28.344Z</published>
-    <updated>2020-02-02T15:18:28.344Z</updated>
+    <title>new trip</title>
+    <link href="http://yoursite.com/blog/2020/02/03/2020-02-03-new-trip/"/>
+    <id>http://yoursite.com/blog/2020/02/03/2020-02-03-new-trip/</id>
+    <published>2020-02-02T16:00:00.000Z</published>
+    <updated>2020-02-02T16:50:10.603Z</updated>
     
     <summary type="html">
     
@@ -36,6 +36,33 @@
     </summary>
     
     
+    
+      <category term="旅遊" scheme="http://yoursite.com/blog/tags/%E6%97%85%E9%81%8A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/blog/2019/12/31/2019-12-31-hello-world/"/>
+    <id>http://yoursite.com/blog/2019/12/31/2019-12-31-hello-world/</id>
+    <published>2019-12-30T16:00:00.000Z</published>
+    <updated>2020-02-02T16:49:06.507Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="工作" scheme="http://yoursite.com/blog/tags/%E5%B7%A5%E4%BD%9C/"/>
     
   </entry>
   
