@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>冠穎的筆記本</title>
   
   
-  <link href="/atom.xml" rel="self"/>
+  <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://yoursite.com/blog/"/>
   <updated>2020-02-02T15:18:28.344Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://yoursite.com/blog/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>朱冠穎</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2020/02/02/hello-world/"/>
-    <id>http://yoursite.com/2020/02/02/hello-world/</id>
+    <link href="http://yoursite.com/blog/2020/02/02/hello-world/"/>
+    <id>http://yoursite.com/blog/2020/02/02/hello-world/</id>
     <published>2020-02-02T15:18:28.344Z</published>
     <updated>2020-02-02T15:18:28.344Z</updated>
     
