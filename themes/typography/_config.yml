@@ -23,3 +23,6 @@ showTags: true
 
 # Color scheme
 themeStyle: light # light/dark
+
+# Custom
+GA: UA-160305667-1

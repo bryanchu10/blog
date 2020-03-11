@@ -1,9 +1,11 @@
 doctype
-html(lang="zh-CN")
+html(lang="zh-tw")
     head
         include head
 
     body
+        #fb-root
+        script(async, defer, crossorigin="anonymous", src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v6.0")
         div#stage.container
             div.row
                 include sidebar
@@ -20,4 +22,13 @@ html(lang="zh-CN")
         script(src= url_for('js/jquery.appear.js'))
         script(src= url_for('js/google-analytics.js'))
         script(src= url_for('js/typography.js'))
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        script(async src="https://www.googletagmanager.com/gtag/js?id=" + theme.GA)
+        script.
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '#{theme.GA}');
+
 
