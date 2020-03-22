@@ -2,12 +2,12 @@
 <h3 id="元素設定-float-前後的表現"><a href="#元素設定-float-前後的表現" class="headerlink" title="元素設定 float 前後的表現"></a>元素設定 float 前後的表現</h3><ul>
 <li>區塊元素佔據的橫向空間</li>
 </ul>
-<p>因為太常使用 float 了，所以很容易忘記，原本區塊元素（block element）會佔據目前身處的容器中高度範圍內所有的橫向空間。即使對區塊元素設定 width，區塊元素還是會占滿整個元素空間。設定 width，只會影響到它的 content 寬度，並沒有辦法使其不佔據所有橫向空間。如果在同一層級再擺一個元素，因為區塊元素已經占據自身高度內的橫向空間，新元素位置會在這個區塊元素的下一行。</p>
+<p>因為太常使用 float 了，所以很容易忘記，原本區塊元素（block element）會佔據目前身處的容器中高度範圍內所有的橫向空間。即使對區塊元素設定 width，區塊元素還是會占滿整個元素空間。設定 width，只會影響到它的 content 寬度，並沒有辦法使其不佔據所有橫向空間。如果在同一層級再擺一個元素，因為區塊元素已經佔據自身高度內的橫向空間，新元素位置會在這個區塊元素的下一行。</p>
 <p>使用了 float 之後，元素佔據的橫向空間則會是 content 寬度 + padding 寬度 + border 寬度 + margin 寬度。</p>
 <ul>
 <li>行內元素的 display 設定</li>
 </ul>
-<p>行內元素（inline element）原本設定 width、height、margin-top、margin-bottom 不會產生效果，padding-top 與 padding-bottom 沒有辦法撐開空間。但是 float 之後會帶有區塊元素的特性，這時候上述的無法發揮作用屬性值都會運作。</p>
+<p>行內元素（inline element）原本設定 width、height、margin-top、margin-bottom 不會產生效果，padding-top 與 padding-bottom 沒有辦法撐開空間。但是 float 之後會帶有區塊元素的特性，這時候上述無法發揮作用的屬性都可以運作。</p>
 <p>這邊容易忘記的是，因為 float 讓行內元素帶有區塊元素的特性，所以在程式碼撰寫上，如果有將行內元素轉成區塊元素的需求，又剛好已經有 float 設定，就不用再寫 <code>display: block</code> 了。</p>
 <h3 id="ul-li-的清除浮動問題"><a href="#ul-li-的清除浮動問題" class="headerlink" title="ul li 的清除浮動問題"></a>ul li 的清除浮動問題</h3><p>考慮一個簡單的<a href="https://codepen.io/bryanchu10/pen/yLNxLOY" target="_blank" rel="noopener">網頁架構</a>，在這個 CodePen 中，因為 h1 和 ul 都使用了 float，所以在 h1 和 ul 的父層元素 header 內部結尾處要清除浮動，確定 header 內部的浮動現象不會影響到 header 之外。在這邊使用偽元素的方式，在 header 標籤內加入 clearfix 這個類別選擇器後，header 的最後會產生一個可以清除浮動的偽元素。</p>
 <ul>
@@ -22,7 +22,7 @@
 <blockquote>
 <p>Zero or more <code>&lt;li&gt;</code>, <code>&lt;script&gt;</code> and <code>&lt;template&gt;</code> elements.</p>
 </blockquote>
-<p>所以在如果是這樣的架構</p>
+<p>所以如果是這樣的架構</p>
 <pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>連結一<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>連結二<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
