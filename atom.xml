@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://bryanchu10.github.io/blog/"/>
-  <updated>2020-03-21T16:00:00.000Z</updated>
+  <updated>2020-03-28T16:00:00.000Z</updated>
   <id>https://bryanchu10.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>鼠年全馬鐵人挑戰 02：容易誤解的 position 特性</title>
+    <link href="https://bryanchu10.github.io/blog/2020/03/29/2020-03-29-%20position/"/>
+    <id>https://bryanchu10.github.io/blog/2020/03/29/2020-03-29-%20position/</id>
+    <published>2020-03-28T16:00:00.000Z</published>
+    <updated>2020-03-28T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;相對定位與絕對定位是網頁排版中常常用到的技巧之一，特別是在視覺上出現區塊內元素橫跨區塊元素的設計，例如這個 &lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="w3HexSchool" scheme="https://bryanchu10.github.io/blog/tags/w3HexSchool/"/>
+    
+      <category term="CSS" scheme="https://bryanchu10.github.io/blog/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title>鼠年全馬鐵人挑戰 01：曾經困擾我的 float 問題</title>
