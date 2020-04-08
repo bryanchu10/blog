@@ -1,25 +1,26 @@
 $backgroundColor: #222222;
 $foregroundColor: #e9e9e9;
-$fontList: "Source Sans Pro", "Roboto", "Helvetica", "Helvetica Neue",
-  "Source Han Sans SC", "Source Han Sans TC", "PingFang SC", "PingFang HK",
-  "PingFang TC", sans-serif;
-$titleFontList: "HiraMinProN-W6", "Source Han Serif CN", "Source Han Serif SC",
-  "Source Han Serif TC", serif;
+$titleFontList: "Noto Sans TC", sans-serif;
+$fontList: "Noto Serif TC", serif;
 $verticalPrimaryPaddingTopPatch: 0;
 $verticalSecondaryPaddingTopPatch: 1px;
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,600");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Serif+TC:wght@400;700;900&display=swap');
 @import "animation";
 
 html,
 body,
 span,
-p,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+  font-family: $titleFontList;
+  color: $foregroundColor;
+}
+
+p {
   font-family: $fontList;
   color: $foregroundColor;
 }
@@ -70,7 +71,7 @@ h6 {
 
 body {
   font-size: 18px;
-  line-height: 1.5em;
+  line-height: 1.8em;
 
   @if lightness($backgroundColor) >50 {
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACFJREFUeNpiZGBg4GegAsBlCD8TqSYNQg2Mo6FEBAAIMACdPABtrSW/IQAAAABJRU5ErkJggg==");
@@ -153,7 +154,7 @@ body {
 }
 
 .site-title {
-  font-weight: bolder;
+  font-weight: 900;
   font-style: normal;
   width: auto;
   height: auto;
@@ -181,11 +182,11 @@ body {
 
   * {
     text-align: left;
-    font-weight: bolder;
+    font-weight: 900;
     margin-top: 0;
     margin-left: 10px;
     margin-right: 0;
-    font-family: $titleFontList;
+    font-family: $fontList;
   }
 }
 
@@ -200,7 +201,7 @@ body {
 }
 
 .site-title-links {
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
   margin: 0;
   padding: 60px 0;
@@ -340,7 +341,7 @@ footer {
   margin-top: 10px;
   padding-top: 0;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 footer * {
@@ -349,16 +350,18 @@ footer * {
 
 .post-container {
   margin: 0 0 20px 0;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 .post-title {
   font-size: 24px;
-  font-weight: bold;
+  font-family: $titleFontList;
+  font-weight: 700;
   margin: 3px 0;
 }
 
 .post-meta {
+  font-family: $titleFontList;
   font-size: 16px;
   margin: 10px 0;
 }
@@ -448,7 +451,7 @@ figure {
 
   .site-title {
     margin: 0;
-    font-weight: bolder;
+    font-weight: 900;
     font-style: normal;
     width: auto;
     height: auto;
@@ -516,7 +519,7 @@ figure {
 
   .post-title {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 700;
     margin: 3px 0;
   }
 
@@ -618,7 +621,7 @@ figure {
 
   .site-title {
     margin: 0;
-    font-weight: bolder;
+    font-weight: 900;
     font-style: normal;
     width: auto;
     height: auto;
@@ -686,7 +689,7 @@ figure {
 
   .post-title {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 700;
     margin: 3px 0;
   }
 
