@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://bryanchu10.github.io/blog/"/>
-  <updated>2020-04-11T16:00:00.000Z</updated>
+  <updated>2020-04-18T16:00:00.000Z</updated>
   <id>https://bryanchu10.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>鼠年全馬鐵人挑戰 05：自製 select 選單樣式（下）- 選單展開收闔</title>
+    <link href="https://bryanchu10.github.io/blog/2020/04/19/2020-04-19-%20customed-select-box-2/"/>
+    <id>https://bryanchu10.github.io/blog/2020/04/19/2020-04-19-%20customed-select-box-2/</id>
+    <published>2020-04-18T16:00:00.000Z</published>
+    <updated>2020-04-18T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="w3HexSchool" scheme="https://bryanchu10.github.io/blog/tags/w3HexSchool/"/>
+    
+      <category term="CSS" scheme="https://bryanchu10.github.io/blog/tags/CSS/"/>
+    
+      <category term="JS" scheme="https://bryanchu10.github.io/blog/tags/JS/"/>
+    
+  </entry>
   
   <entry>
     <title>鼠年全馬鐵人挑戰 04：自製 select 選單樣式（上）- 連結自製選項到原本的選單</title>
