@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://bryanchu10.github.io/blog/"/>
-  <updated>2020-04-25T16:00:00.000Z</updated>
+  <updated>2020-05-02T16:00:00.000Z</updated>
   <id>https://bryanchu10.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>鼠年全馬鐵人挑戰 07：預設 VS Code 新檔案使用語法</title>
+    <link href="https://bryanchu10.github.io/blog/2020/05/03/2020-05-03-doc-language-setting/"/>
+    <id>https://bryanchu10.github.io/blog/2020/05/03/2020-05-03-doc-language-setting/</id>
+    <published>2020-05-02T16:00:00.000Z</published>
+    <updated>2020-05-02T16:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;有的時候想快速用 VS Code 寫個 HTML 檔案，常常快捷鍵 Ctrl + N 之後，就想打驚嘆號，透過 Emmet 快速產生
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="w3HexSchool" scheme="https://bryanchu10.github.io/blog/tags/w3HexSchool/"/>
+    
+      <category term="VS Code" scheme="https://bryanchu10.github.io/blog/tags/VS-Code/"/>
+    
+  </entry>
   
   <entry>
     <title>鼠年全馬鐵人挑戰 06：假如 span 遇上 border-right？</title>
