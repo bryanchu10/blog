@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"bryanchu10.github.io","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="之前在練習網頁排版的時候，碰過一個小問題。雖然是小問題，但當時卻花了不少時間解決。 例如像是這樣子的橫幅，該如何讓文字部分背景呈現半透明效果呢？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="鼠年全馬鐵人挑戰 03：網頁橫幅文字的半透明背景問題">
+<meta property="og:url" content="https://bryanchu10.github.io/blog/2020/04/05/2020-04-05-%20banner-text/index.html">
+<meta property="og:site_name" content="做點筆記吧">
+<meta property="og:description" content="之前在練習網頁排版的時候，碰過一個小問題。雖然是小問題，但當時卻花了不少時間解決。 例如像是這樣子的橫幅，該如何讓文字部分背景呈現半透明效果呢？">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-05-banner-text-2.png?alt=media&token=cf651aa5-db54-4a52-830b-059c23b55564">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-05-banner-text-3.png?alt=media&token=c735b290-334c-4cb3-9e5d-2cd2e2356c2c">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-05-banner-text-1.png?alt=media&token=8020e6fb-6ab2-4033-89ef-61dbcf8ecff6">
+<meta property="article:published_time" content="2020-04-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-28T16:02:34.040Z">
+<meta property="article:author" content="Bryan Chu">
+<meta property="article:tag" content="w3HexSchool">
+<meta property="article:tag" content="CSS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-05-banner-text-2.png?alt=media&token=cf651aa5-db54-4a52-830b-059c23b55564">
+
+<link rel="canonical" href="https://bryanchu10.github.io/blog/2020/04/05/2020-04-05-%20banner-text/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>鼠年全馬鐵人挑戰 03：網頁橫幅文字的半透明背景問題 | 做點筆記吧</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">做點筆記吧</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://bryanchu10.github.io/blog/2020/04/05/2020-04-05-%20banner-text/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Bryan Chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="做點筆記吧">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          鼠年全馬鐵人挑戰 03：網頁橫幅文字的半透明背景問題
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-04-05 00:00:00" itemprop="dateCreated datePublished" datetime="2020-04-05T00:00:00+08:00">2020-04-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-08-29 00:02:34" itemprop="dateModified" datetime="2022-08-29T00:02:34+08:00">2022-08-29</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>之前在練習網頁排版的時候，碰過一個小問題。雖然是小問題，但當時卻花了不少時間解決。</p>
+<p>例如像是這樣子的橫幅，該如何讓文字部分背景呈現半透明效果呢？</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-05-banner-text-2.png?alt=media&token=cf651aa5-db54-4a52-830b-059c23b55564" alt="Alt text"></p>
+<span id="more"></span>
+
+<p>文字部分是用 h1 標籤撰寫，我第一個想到的作法是對 h1 設定 opacity。結果</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-05-banner-text-3.png?alt=media&token=c735b290-334c-4cb3-9e5d-2cd2e2356c2c" alt="Alt text"></p>
+<p>連文字部分也跟著半透明啦！</p>
+<p>接下來就是誤入歧途的開始，我瞭解上面的問題是因為 opaicity 調整了整個物件的透明度，於是我把 h1 用一個新的 div 包裹，在這個 div 設定白色背景和透明度，但是呈現畫面和上面一模一樣。</p>
+<p>真是令人氣餒，不過意外的知道 opacity 不只會影響被設定的物件的透明度，還會連帶的影響子元素的視覺呈現效果，也算是有所收穫。</p>
+<h3 id="rgba"><a href="#rgba" class="headerlink" title="rgba( )"></a>rgba( )</h3><p>折騰了半天，才知道在 <code>background-color</code> 使用 <code>rgba()</code> 的寫法，就可以解決這個問題了。寫法是</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background</span>: <span class="built_in">rgba</span>(red, green, blue, alpha);</span><br></pre></td></tr></table></figure>
+<p>首先依序填入紅、綠、藍三原色的色值，可以使用 0 ~ 255 的整數亮度寫法，或是用百分比 0% ~ 100% 來表示亮度。</p>
+<p>接著 alpha 代表透明度，範圍從 0.0 ~ 1.0，0 是完全穿透，1 是不透明。</p>
+<h3 id="linear-gradient"><a href="#linear-gradient" class="headerlink" title="linear-gradient( )"></a>linear-gradient( )</h3><p>後來瞭解到越來越多的 CSS 屬性設定和它們之間的關係，終於可以做出像這樣的橫幅了。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-05-banner-text-1.png?alt=media&token=8020e6fb-6ab2-4033-89ef-61dbcf8ecff6" alt="alt text"></p>
+<p>在接近狐狸頭部的部份讓底色消失，使整體更美觀。</p>
+<p>這是在 <code>background-image</code> 使用 <code>linear-gradient()</code> 的效果。寫法是</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(方向, 第一種顏色 範圍, 第二種顏色 範圍,...)</span><br></pre></td></tr></table></figure>
+
+<p>以我這個橫幅來說</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(to right, <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0.5</span>) <span class="number">40%</span>, <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>) <span class="number">60%</span>);</span><br></pre></td></tr></table></figure>
+
+<p>就是方向由左至右，到達漸變距離距離 40% 處會是 rgba(255,255,255,0.5) 這個顏色，到 60% 處會是 rgba(255,255,255,0.5) 這個顏色。</p>
+<p>由於顏色線性漸變的方向不一定是水平或是垂直，也可以設定 deg 來呈現傾斜的線性漸變效果，因此顏色變化的範圍也不一定是元素的寬度或高度，而這個顏色變化的範圍被稱為漸變距離。</p>
+<p>詳細的漸變距離計算方式可以參考 MDN web docs 在 linear-gradient 條目的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient#Composition_of_a_linear_gradient">Composition of a linear gradient</a> 這一段落。</p>
+<p>最後，使用 linear-grdient 要注意一點，linear-gradient( ) 不能作用在 <code>background-color</code> 屬性，過去我因為習慣都用簡寫 <code>background</code> 屬性來設定各種背景資訊，以至於在不能使用簡寫的時候常犯這個錯誤。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/w3HexSchool/" rel="tag"># w3HexSchool</a>
+              <a href="/blog/tags/CSS/" rel="tag"># CSS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2020/03/29/2020-03-29-%20position/" rel="prev" title="鼠年全馬鐵人挑戰 02：容易誤解的 position 特性">
+      <i class="fa fa-chevron-left"></i> 鼠年全馬鐵人挑戰 02：容易誤解的 position 特性
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2020/04/12/2020-04-12-%20customed-select-box-1/" rel="next" title="鼠年全馬鐵人挑戰 04：自製 select 選單樣式（上）- 連結自製選項到原本的選單">
+      鼠年全馬鐵人挑戰 04：自製 select 選單樣式（上）- 連結自製選項到原本的選單 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#rgba"><span class="nav-number">1.</span> <span class="nav-text">rgba( )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linear-gradient"><span class="nav-number">2.</span> <span class="nav-text">linear-gradient( )</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Bryan Chu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bryan Chu</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

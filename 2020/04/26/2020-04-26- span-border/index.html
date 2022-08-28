@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"bryanchu10.github.io","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="這週在回答關於 CSS 排版的提問的時候，碰到一個有趣的問題，先上 CodePen。  提問者的設計大概像這個 CodePen，連結列選項之間的分隔線沒有像 a 標籤的 hover 範圍高度那麼高，所以用 li 或 a 標籤的 border-right 無法作出這個設計。他的選項的文字包在 span 標籤中，用其中一個選項的 span 做出和文字高度相同的分隔線。 先不論使用 span 來作分隔線">
+<meta property="og:type" content="article">
+<meta property="og:title" content="鼠年全馬鐵人挑戰 06：假如 span 遇上 border-right？">
+<meta property="og:url" content="https://bryanchu10.github.io/blog/2020/04/26/2020-04-26-%20span-border/index.html">
+<meta property="og:site_name" content="做點筆記吧">
+<meta property="og:description" content="這週在回答關於 CSS 排版的提問的時候，碰到一個有趣的問題，先上 CodePen。  提問者的設計大概像這個 CodePen，連結列選項之間的分隔線沒有像 a 標籤的 hover 範圍高度那麼高，所以用 li 或 a 標籤的 border-right 無法作出這個設計。他的選項的文字包在 span 標籤中，用其中一個選項的 span 做出和文字高度相同的分隔線。 先不論使用 span 來作分隔線">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-26-span-border-1.png?alt=media&token=c2c047e1-12c9-4350-9892-f9a63248d195">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-26-span-border-2.png?alt=media&token=df67c1b0-7111-4097-9157-d81e835626d6">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-26-span-border-3.png?alt=media&token=d7a30fe5-201e-4a0e-b90d-38895201e2d4">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-26-span-border-4.png?alt=media&token=9547d1dd-911a-40c6-a0bb-3325bedcfffc">
+<meta property="article:published_time" content="2020-04-25T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-28T16:04:31.815Z">
+<meta property="article:author" content="Bryan Chu">
+<meta property="article:tag" content="w3HexSchool">
+<meta property="article:tag" content="CSS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-26-span-border-1.png?alt=media&token=c2c047e1-12c9-4350-9892-f9a63248d195">
+
+<link rel="canonical" href="https://bryanchu10.github.io/blog/2020/04/26/2020-04-26-%20span-border/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>鼠年全馬鐵人挑戰 06：假如 span 遇上 border-right？ | 做點筆記吧</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">做點筆記吧</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://bryanchu10.github.io/blog/2020/04/26/2020-04-26-%20span-border/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Bryan Chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="做點筆記吧">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          鼠年全馬鐵人挑戰 06：假如 span 遇上 border-right？
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-04-26 00:00:00" itemprop="dateCreated datePublished" datetime="2020-04-26T00:00:00+08:00">2020-04-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-08-29 00:04:31" itemprop="dateModified" datetime="2022-08-29T00:04:31+08:00">2022-08-29</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>這週在回答關於 CSS 排版的提問的時候，碰到一個有趣的問題，先上 <a target="_blank" rel="noopener" href="https://codepen.io/bryanchu10/pen/abvJJEV">CodePen</a>。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-26-span-border-1.png?alt=media&token=c2c047e1-12c9-4350-9892-f9a63248d195" alt="Alt text"></p>
+<p>提問者的設計大概像這個 CodePen，連結列選項之間的分隔線沒有像 a 標籤的 hover 範圍高度那麼高，所以用 li 或 a 標籤的 border-right 無法作出這個設計。他的選項的文字包在 span 標籤中，用其中一個選項的 span 做出和文字高度相同的分隔線。</p>
+<p>先不論使用 span 來作分隔線是否是最佳選擇，提問者的問題是：為甚麼 border-right 沒有辦法和文字一樣高？</p>
+<span id="more"></span>
+
+<h3 id="line-height-無法影響-border-高度"><a href="#line-height-無法影響-border-高度" class="headerlink" title="line-height 無法影響 border 高度"></a>line-height 無法影響 border 高度</h3><p>第一時間我認為原因是圖片對齊文字的 baseline，沒有對齊 bottom，造成整個行列的高度受到影響，而 span 高度受整個行列高度影響，所以比文字還高。但是用開發者檢視工具看過之後發現 span 是純粹和文字互動，span 的高度就是比文字高。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-26-span-border-2.png?alt=media&token=df67c1b0-7111-4097-9157-d81e835626d6" alt="Alt text"></p>
+<p>我知道 span 是行內元素，只要讓它帶有區塊元素特性（轉成區塊元素，或是讓它浮動），border-right 的高度就一定會和盒模型高度相同。但是我想說 border-right 的高度應該是行內元素決定的，行內元素的高度又是 <code>line-height</code> 決定的，那麼應該實驗一下，設定了 <code>line-height</code> 的屬性值，是不是可以控制 border-right 的高度？</p>
+<p>結果竟然不行！（因為怕侵犯圖片版權，請自行腦補一張貓咪驚嚇的梗圖）。</p>
+<h3 id="字體是關鍵"><a href="#字體是關鍵" class="headerlink" title="字體是關鍵"></a>字體是關鍵</h3><p>我知道行內元素很多詭異的空間表現，都和文字的特性有關，像是圖片預設對齊 baseline 之類的等等。於是我靈機一動，難道現在 border-right 和文字高度不一致，竟然是字體的空隙嗎？於是我試著換上字面和字身設計幾乎一樣高的新細明體，果然 border-right 高度變成和文字一樣高了。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-26-span-border-3.png?alt=media&token=d7a30fe5-201e-4a0e-b90d-38895201e2d4" alt="Alt text"></p>
+<p>border-right 本身是吃文字字身高度這件事可以理解，但是 line-height 無法影響 border-right 的高度讓我非常驚訝！試著找了一下關於 border 的說明文件，有沒有不建議使用在行內元素這一項，似乎也沒有。那麼，這真的是一個使用上要特別注意的小細節呢！</p>
+<h3 id="border-在行內元素出現的場合"><a href="#border-在行內元素出現的場合" class="headerlink" title="border 在行內元素出現的場合"></a>border 在行內元素出現的場合</h3><p>一開始我很難接受 border 高度和 <code>line-height</code> 無關的現象，但是後來想到在文件編排中有的時候會出現這樣的效果：</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-26-span-border-4.png?alt=media&token=9547d1dd-911a-40c6-a0bb-3325bedcfffc" alt="Alt text"></p>
+<p>突然理解了為甚麼要設計 border 高度和 <code>line-height</code> 無關，在需要圈住文字的應用場合，border 高度和 <code>line-height</code> 無關反而才是我們想要的呈現方式。</p>
+<h3 id="補充資料"><a href="#補充資料" class="headerlink" title="補充資料"></a>補充資料</h3><p>關於字面、字身的介紹，可以參考 justfont 的部落格文章<a target="_blank" rel="noopener" href="https://blog.justfont.com/2012/12/hanzi-type-design-1/">字型設計自己來─中文字型設計的第一課</a>。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/w3HexSchool/" rel="tag"># w3HexSchool</a>
+              <a href="/blog/tags/CSS/" rel="tag"># CSS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2020/04/19/2020-04-19-%20customed-select-box-2/" rel="prev" title="鼠年全馬鐵人挑戰 05：自製 select 選單樣式（下）- 選單展開收闔">
+      <i class="fa fa-chevron-left"></i> 鼠年全馬鐵人挑戰 05：自製 select 選單樣式（下）- 選單展開收闔
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2020/05/03/2020-05-03-doc-language-setting/" rel="next" title="鼠年全馬鐵人挑戰 07：預設 VS Code 新檔案使用語法">
+      鼠年全馬鐵人挑戰 07：預設 VS Code 新檔案使用語法 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#line-height-%E7%84%A1%E6%B3%95%E5%BD%B1%E9%9F%BF-border-%E9%AB%98%E5%BA%A6"><span class="nav-number">1.</span> <span class="nav-text">line-height 無法影響 border 高度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E9%AB%94%E6%98%AF%E9%97%9C%E9%8D%B5"><span class="nav-number">2.</span> <span class="nav-text">字體是關鍵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#border-%E5%9C%A8%E8%A1%8C%E5%85%A7%E5%85%83%E7%B4%A0%E5%87%BA%E7%8F%BE%E7%9A%84%E5%A0%B4%E5%90%88"><span class="nav-number">3.</span> <span class="nav-text">border 在行內元素出現的場合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A3%9C%E5%85%85%E8%B3%87%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">補充資料</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Bryan Chu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bryan Chu</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

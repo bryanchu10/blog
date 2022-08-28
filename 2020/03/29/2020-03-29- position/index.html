@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"bryanchu10.github.io","root":"/blog/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="相對定位與絕對定位是網頁排版中常常用到的技巧之一，特別是在視覺上出現區塊內元素橫跨區塊元素的設計，例如這個 CodePen 。在使用上，position: relative; 和 position: absolute; 經常成對出現，但也因此造成一些常見的誤解。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="鼠年全馬鐵人挑戰 02：容易誤解的 position 特性">
+<meta property="og:url" content="https://bryanchu10.github.io/blog/2020/03/29/2020-03-29-%20position/index.html">
+<meta property="og:site_name" content="做點筆記吧">
+<meta property="og:description" content="相對定位與絕對定位是網頁排版中常常用到的技巧之一，特別是在視覺上出現區塊內元素橫跨區塊元素的設計，例如這個 CodePen 。在使用上，position: relative; 和 position: absolute; 經常成對出現，但也因此造成一些常見的誤解。">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-03-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-28T15:53:58.853Z">
+<meta property="article:author" content="Bryan Chu">
+<meta property="article:tag" content="w3HexSchool">
+<meta property="article:tag" content="CSS">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://bryanchu10.github.io/blog/2020/03/29/2020-03-29-%20position/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>鼠年全馬鐵人挑戰 02：容易誤解的 position 特性 | 做點筆記吧</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">做點筆記吧</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://bryanchu10.github.io/blog/2020/03/29/2020-03-29-%20position/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Bryan Chu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="做點筆記吧">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          鼠年全馬鐵人挑戰 02：容易誤解的 position 特性
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-03-29 00:00:00" itemprop="dateCreated datePublished" datetime="2020-03-29T00:00:00+08:00">2020-03-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2022-08-28 23:53:58" itemprop="dateModified" datetime="2022-08-28T23:53:58+08:00">2022-08-28</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>相對定位與絕對定位是網頁排版中常常用到的技巧之一，特別是在視覺上出現區塊內元素橫跨區塊元素的設計，例如這個 <a target="_blank" rel="noopener" href="https://codepen.io/bryanchu10/pen/oNXJOKP">CodePen</a> 。在使用上，<code>position: relative;</code> 和 <code>position: absolute;</code> 經常成對出現，但也因此造成一些常見的誤解。</p>
+<span id="more"></span>
+
+<h3 id="position-absolute-一定要和-position-relative-搭配嗎？"><a href="#position-absolute-一定要和-position-relative-搭配嗎？" class="headerlink" title="position: absolute; 一定要和 position: relative; 搭配嗎？"></a>position: absolute; 一定要和 position: relative; 搭配嗎？</h3><p>在 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">MDN web docs</a> 關於絕對定位有這麼一段敘述：</p>
+<blockquote>
+<p>The absolutely positioned element is positioned relative to its nearest positioned ancestor (i.e., the nearest ancestor that is not static).</p>
+</blockquote>
+<p>絕對定位的元素以最靠近它，並且 position 過的父元素來相對定位。甚麼是 position 過的父元素（positioned ancestor）呢？MDN web docs 用括弧特別說明，就是那些最靠近並且「不是 static 」的父元素。<code>static</code> 是元素預設的 position 屬性值，只要元素的 position 是預設值以外的設定，包括：<code>relative</code>、<code>absolute</code>、<code>sticky</code>、<code>fixed</code>，那麼它的子元素就可以它為定位的基準點。</p>
+<p>一個常見的網頁撰寫錯誤，發生在連續性的定位關係結構。考慮以下的情況：子元素 B 以父元素 A 為基準進行絕對定位， 子元素 C 又拿元素 B 當基準來定位。第一組 A 與 B 的關係設定 A 的 position 為 <code>relative</code>，B 為 <code>absolute</code>：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.A</span>&#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.B</span>&#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接著第二組 B 與 C 的關係，如果認為 <code>absolute</code> 和 <code>relative</code> 一定要成對出現，經常會發生這樣的錯誤：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.A</span>&#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.B</span>&#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.C</span>&#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果知道同一個元素的屬性值，較後撰寫的內容會覆蓋較前撰寫的內容，但是沒有絕對定位父元素對象的概念，則可能寫出這樣的設定：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;A&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;B&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;b&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;c&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.A</span>&#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.B</span>&#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.b</span>&#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.c</span>&#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>也就是為了回避覆蓋屬性值的問題，多使用了一個區塊元素來完成定位需求。</p>
+<p>但是以上的寫法都起因於以為 <code>position: absolute;</code> 一定要和 <code>position: relative;</code> 搭配，如果瞭解上述可以作為絕對定位對象的標準，就不會發生這樣的狀況了。正確的寫法如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.A</span>&#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.B</span>&#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.C</span>&#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="position-relative-本身的作用"><a href="#position-relative-本身的作用" class="headerlink" title="position: relative; 本身的作用"></a>position: relative; 本身的作用</h3><p>排版面對的情形的通常是一個脫離一般排版的元素以一個正常排版的元素位定位基準，<code>relative</code> 這個屬性值，不像 <code>absolute</code> 或是 <code>fixed</code> 會使設定的元素本身脫離一般排版，所以才會經常和設定了 <code>position: absolute;</code> 的子元素搭配。雖然設定了 <code>position: relative;</code> 的元素不會脫離一般排版，但是仍然有不同於預設值的狀態。</p>
+<p>最明顯的就是 <code>top</code>、<code>right</code>、<code>bottom</code>、<code>left</code> 這四個屬性變得可以運作。在設定了 <code>position: relative;</code> 的元素「本身」設定前述的四個屬性，元素會以正常排版之下所在的位置為基準進行偏移。不過建議如果有調整元素位置的需求，儘量不要使用這種方式，原因是因為元素所佔據的空間和視覺上所在的位置不一致，會使得排版管理上變得複雜。</p>
+<h3 id="position-absolute-對於元素佔據空間影響"><a href="#position-absolute-對於元素佔據空間影響" class="headerlink" title="position: absolute; 對於元素佔據空間影響"></a>position: absolute; 對於元素佔據空間影響</h3><p><code>position: absolute;</code> 對於元素本身佔據空間產生的影響和<a href="https://bryanchu10.github.io/blog/2020/03/22/2020-03-22-%20float-and-clearfix/">上一篇文章</a>提到的 <code>float</code> 作用類似：</p>
+<ul>
+<li>區塊元素佔據的橫向空間</li>
+</ul>
+<p>使用了 <code>position: absolute;</code> 之後，元素佔據的橫向空間會是 content 寬度 + padding 寬度 + border 寬度 + margin 寬度。不過要注意的是，這邊所說的「佔據空間」，是對於元素「本身」來說，而不是指和其它元素互相爭奪空間的關係來說。設定了 position: absolute; 之後，元素因為脫離了一般排版，不會和其它元素在平面空間上產生推擠行為，處在同一平面位置的兩個元素，會在垂直方向上互相覆蓋。</p>
+<ul>
+<li>行內元素的設定</li>
+</ul>
+<p>行內元素（inline element）原本設定 <code>width</code>、<code>height</code>、<code>margin-top</code>、<code>margin-bottom</code> 不會產生效果，<code>padding-top</code> 與 <code>padding-bottom</code> 沒有辦法撐開空間。但是設定了 <code>position: absolute;</code> 之後會帶有區塊元素的特性，這時候上述無法發揮作用的屬性都可以運作。和其它元素的空間關係則和上述「區塊元素佔據的橫向空間」說明相同。</p>
+<p>這邊容易忘記的是，因為 <code>position: absolute;</code> 讓行內元素帶有區塊元素的特性，所以在程式碼撰寫上，如果有將行內元素轉成區塊元素的需求，又剛好已經有 <code>position: absolute;</code> 設定，就不用再寫 <code>display: block;</code> 了。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/w3HexSchool/" rel="tag"># w3HexSchool</a>
+              <a href="/blog/tags/CSS/" rel="tag"># CSS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2020/03/22/2020-03-22-%20float-and-clearfix/" rel="prev" title="鼠年全馬鐵人挑戰 01：曾經困擾我的 float 問題">
+      <i class="fa fa-chevron-left"></i> 鼠年全馬鐵人挑戰 01：曾經困擾我的 float 問題
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2020/04/05/2020-04-05-%20banner-text/" rel="next" title="鼠年全馬鐵人挑戰 03：網頁橫幅文字的半透明背景問題">
+      鼠年全馬鐵人挑戰 03：網頁橫幅文字的半透明背景問題 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#position-absolute-%E4%B8%80%E5%AE%9A%E8%A6%81%E5%92%8C-position-relative-%E6%90%AD%E9%85%8D%E5%97%8E%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">position: absolute; 一定要和 position: relative; 搭配嗎？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#position-relative-%E6%9C%AC%E8%BA%AB%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">position: relative; 本身的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#position-absolute-%E5%B0%8D%E6%96%BC%E5%85%83%E7%B4%A0%E4%BD%94%E6%93%9A%E7%A9%BA%E9%96%93%E5%BD%B1%E9%9F%BF"><span class="nav-number">3.</span> <span class="nav-text">position: absolute; 對於元素佔據空間影響</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Bryan Chu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bryan Chu</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
