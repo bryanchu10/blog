@@ -1,3 +1,5 @@
+https://bryanchu10.github.io/blog/tags/index.html
+https://bryanchu10.github.io/blog/categories/index.html
 https://bryanchu10.github.io/blog/2020/05/10/2020-05-10-world-view/
 https://bryanchu10.github.io/blog/2020/05/03/2020-05-03-doc-language-setting/
 https://bryanchu10.github.io/blog/2020/04/26/2020-04-26-span-border/
@@ -7,8 +9,6 @@ https://bryanchu10.github.io/blog/2020/04/05/2020-04-05-banner-text/
 https://bryanchu10.github.io/blog/2020/03/29/2020-03-29-position/
 https://bryanchu10.github.io/blog/2020/03/22/2020-03-22-float-and-clearfix/
 https://bryanchu10.github.io/blog/google99790ce98b843ed6.html
-https://bryanchu10.github.io/blog/categories/index.html
-https://bryanchu10.github.io/blog/tags/index.html
 https://bryanchu10.github.io/blog
 https://bryanchu10.github.io/blog/tags/w3HexSchool/
 https://bryanchu10.github.io/blog/tags/CSS/
