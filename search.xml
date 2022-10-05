@@ -1,8 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>鼠年全馬鐵人挑戰 07：預設 VS Code 新檔案使用語法</title>
+    <url>/blog/2020/05/03/2020-05-03-doc-language-setting/</url>
+    <content><![CDATA[<p>有的時候想快速用 VS Code 寫個 HTML 檔案，常常快捷鍵 Ctrl + N 之後，就想打驚嘆號，透過 Emmet 快速產生 HTML 的基礎樣板。然後就發現沒有作用，因為這個新檔案格式未定，Emmet 無法判斷要幫你用哪一套縮寫系統。</p>
+<p>那 VS Code 能不能在產生新檔案的時候，就先預設好使用的語言呢？當然可以，地表最強編輯器可不是浪得虛名的，只有你還沒想到的功能，沒有 VS Code 做不到的功能。</p>
+<span id="more"></span>
+
+<h3 id="進入全域設置-setting-json"><a href="#進入全域設置-setting-json" class="headerlink" title="進入全域設置 setting.json"></a>進入全域設置 setting.json</h3><p>用過一陣子 VS Code 的人，應該都知道有一個叫做 setting.json 的檔案，以 json 的格式寫了各種設定，透過對這個檔案進行修改，就可以控制各種套件和 VS Code 內建的功能，達成客製專屬編輯器的目的。</p>
+<p>我剛開始用 VS Code 的時候，VS Code 的設定介面比較偏向工程端，赤裸裸的讓你看到工作區域設定、全域設定等等，然後一不小心就會進入各自的 setting.json 檔案。對於新手不是很友善，一不小心就會改壞預設設定。</p>
+<p>後來 VS Code 設定界面變得非常親民，非常貼近一般軟體的設定介面，有說明、選單、空格等等，只要按照說明就可以透過選擇選項、填上數值，來做到一些簡單的設定。</p>
+<p>不過因為可以調整的設定太多，整個界面很大，每次找我要的設定都要找一下下，雖然有搜尋系統，但還是沒有像直接修改 setting.json 那麼方便，所以我比較喜歡直接到 setting.json 檔案去進行設定，</p>
+<p>但是糟糕的是，從某一次更新開始，我竟然找不到進入全域 setting.json 的途徑了，每次都隨便亂按，從某個有提供連結的部分連過去。</p>
+<p>剛好趁這個機會，我也認真地摸索一下怎麼樣到 setting.json 比較快。</p>
+<ol>
+<li>點擊左下角齒輪，選擇「設定」</li>
+</ol>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-05-03-doc-language-setting-1.png?alt=media&token=61077fa3-bef1-415b-869f-55645373bbb8" alt="Alt text"></p>
+<ol start="2">
+<li>點擊右上角文件圖案進入 setting.json</li>
+</ol>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-05-03-doc-language-setting-2.png?alt=media&token=f0410c03-9221-41bc-a30a-57be43bfb5a1" alt="Alt text"></p>
+<p>原來 json.setting 的連結跑到右上角的文件圖案裡面了！</p>
+<h3 id="更改-setting-json"><a href="#更改-setting-json" class="headerlink" title="更改 setting.json"></a>更改 setting.json</h3><p>加入預設文件語言類型設定 <code>&quot;files.defaultLanguage&quot;: &quot;html&quot;</code></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-05-03-doc-language-setting-3.png?alt=media&token=6a208186-9acc-438d-8b53-019c377f352f" alt="Alt text"></p>
+<p>記得上一個設定的結尾如果沒有「,」的話要補上，才不會發生 json 格式錯誤。</p>
+<p>這樣一來，直接開新檔案的時候，即使沒有副檔名，預設就是使用 HTML 語法了，Emmet 也可以順利使用。</p>
+<p>不過我自己在撰寫上更常發生的狀況是，網頁寫一寫，要新增一個 HTML 或 SCSS。這時候還有一個更方便的設定方式，就是 <code>&quot;files.defaultLanguage&quot;: &quot;$&#123;activeEditorLanguage&#125;&quot;</code>，使用這個設定值的話，新開的檔案格式就會和目前使用的檔案格式相同，和實際需要的情境更接近。</p>
+]]></content>
+      <categories>
+        <category>鼠年全馬鐵人挑戰</category>
+      </categories>
+      <tags>
+        <tag>w3HexSchool</tag>
+        <tag>VS Code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>鼠年全馬鐵人挑戰 08：自己的世界觀</title>
+    <url>/blog/2020/05/10/2020-05-10-world-view/</url>
+    <content><![CDATA[<p>本週的馬拉松文決定以心情抒發為主題。根據六角馬拉松的規則，心情抒發的文章不能超過 20%，在我的精算<del>偷懶</del>之下，每 8 週可以有一次比較輕鬆的文章撰寫。這一週決定分享一下自己學習網頁撰寫過程中，影響我很大的一個想法──以自己的世界觀去理解語法運作。</p>
+<span id="more"></span>
+
+<h3 id="自己的世界觀"><a href="#自己的世界觀" class="headerlink" title="自己的世界觀"></a>自己的世界觀</h3><p>這個想法是某一次查詢資料的時候作者提到的，已經不記得是在哪一篇文章看到的了。簡單的說，在學習語法上，不用去拘泥於所謂正確的程式運作原理，應該去形成自己的理解。舉一個簡單的例子來說，我們知道，在父元素與第一個或最後一個子元素向同一個方向 margin，並且沒有使用 border 時，會發生 margin collapse。</p>
+<p>直接觀察上述的情況，可以理解為在「在元素界線不明確」的時候，可能會發生我泥中有你，你泥中有我的狀況。一旦有了 border 之後，界線變得明確，兩者之間就不會有 margin 重疊了。</p>
+<p>這是一個用直觀現像理解與解釋非常簡單的例子。大部分的人都只熟悉在甚麼樣的情況下會發生 margin collapse，沒有辦法說明為甚麼網頁撰寫設計上會有這樣的一個坑。</p>
+<p>但是世界照常運轉，不知道這件事，並不影響我們對於後續知識的學習與應用。嚴格來說，也沒有人可以說你的解釋是錯誤的，因為在你的說法之下，的確可以準確地預測出會發生 margin collapse 的狀況。這就是形成一套自己的世界觀和解釋。</p>
+<h3 id="重塑世界觀"><a href="#重塑世界觀" class="headerlink" title="重塑世界觀"></a>重塑世界觀</h3><p>然而，如果有一天，有人問到：為甚麼父元素使用 flex 排版的時候，父元素與第一個&#x2F;最後一個子元素向同一個方向 margin，沒有使用 border 時，也不會發生 margin collapse 呢？</p>
+<p>這時候，原本的「元素界線不明確論」就受到挑戰。但是你又想到，在 flex 排版時，子元素會有 flex 內元件屬性，這些屬性還會分配父元素內部的空間。也就是說，在 flex 排版下，父元素的內部空間是被明確計算出來的。於是提出空間掌握理論：當使用到牽涉父元素內部空間定義的語法時，子元素的 margin 和父元素的 margin 就不會發生重疊，因為父元素內部空間被掌握、規範了。</p>
+<p>使用 border 的時候，一定是明確了父元素內部空間範圍，才畫的出 border 的位置。藉由解釋力更強的說法，成功的涵蓋新的現象和之前的現象。</p>
+<p>在學習的過程中，隨著碰到的案例漸漸地增多，自己的世界觀也會不斷地進行重塑，最後會變得越來越完善，甚至會發現靠近基於語法設計之初的原因。然而，比起一開始就直接生硬的吃下自己不能理解的程式面的解釋，在學習過程中不斷地確認、修正自己的理解，因為走過了探索的過程，體會和印象會更深刻。</p>
+]]></content>
+      <categories>
+        <category>鼠年全馬鐵人挑戰</category>
+      </categories>
+      <tags>
+        <tag>w3HexSchool</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>鼠年全馬鐵人挑戰 01：曾經困擾我的 float 問題</title>
+    <url>/blog/2020/03/22/2020-03-22-float-and-clearfix/</url>
+    <content><![CDATA[<p>六角學院最近的一次課程更新，正式從基礎課程就開始介紹 flex 排版。原本就知道現在 flex 排版已經取得主流地位了，但是看到六角課程更新，還是讓我有一種 float 排版逐漸成為歷史遺跡的感覺，也回想起學習 float 排版的過程中踩到的那些坑，決定在告別 float 之前，把曾經困擾我的 float 問題記錄下來。</p>
+<span id="more"></span>
+
+<h3 id="元素設定-float-前後的表現"><a href="#元素設定-float-前後的表現" class="headerlink" title="元素設定 float 前後的表現"></a>元素設定 float 前後的表現</h3><ul>
+<li>區塊元素佔據的橫向空間</li>
+</ul>
+<p>因為太常使用 float 了，所以很容易忘記，原本區塊元素（block element）會佔據目前身處的容器中高度範圍內所有的橫向空間。即使對區塊元素設定 width，區塊元素還是會占滿整個元素空間。設定 width，只會影響到它的 content 寬度，並沒有辦法使其不佔據所有橫向空間。如果在同一層級再擺一個元素，因為區塊元素已經佔據自身高度內的橫向空間，新元素位置會在這個區塊元素的下一行。</p>
+<p>使用了 float 之後，元素佔據的橫向空間則會是 content 寬度 + padding 寬度 + border 寬度 + margin 寬度。</p>
+<ul>
+<li>行內元素的 display 設定</li>
+</ul>
+<p>行內元素（inline element）原本設定 width、height、margin-top、margin-bottom 不會產生效果，padding-top 與 padding-bottom 沒有辦法撐開空間。但是 float 之後會帶有區塊元素的特性，這時候上述無法發揮作用的屬性都可以運作。</p>
+<p>這邊容易忘記的是，因為 float 讓行內元素帶有區塊元素的特性，所以在程式碼撰寫上，如果有將行內元素轉成區塊元素的需求，又剛好已經有 float 設定，就不用再寫 <code>display: block</code> 了。</p>
+<h3 id="ul-li-的清除浮動問題"><a href="#ul-li-的清除浮動問題" class="headerlink" title="ul li 的清除浮動問題"></a>ul li 的清除浮動問題</h3><p>考慮一個簡單的<a href="https://codepen.io/bryanchu10/pen/yLNxLOY">網頁架構</a>，在這個 CodePen 中，因為 h1 和 ul 都使用了 float，所以在 h1 和 ul 的父層元素 header 內部結尾處要清除浮動，確定 header 內部的浮動現象不會影響到 header 之外。在這邊使用偽元素的方式，在 header 標籤內加入 clearfix 這個類別選擇器後，header 的最後會產生一個可以清除浮動的偽元素。</p>
+<ul>
+<li>以浮動元素包裹浮動元素</li>
+</ul>
+<p>注意 header 內右側的連結列，不只是 ul 有使用 float，li 也有使用 float，於是產生的一個疑問：為甚麼不需要在 ul 內部結尾清除浮動，來避免 li 的浮動現象超出 ul 呢？</p>
+<p>原因是當父元素也使用了 float 的時候，子元素的 float 現象就不會影響到父元素之外，有人稱這個現象為「以浮制浮」。</p>
+<ul>
+<li>ul 架構規範</li>
+</ul>
+<p>在 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul">MDN web docs</a> ，ul 允許的內容是 </p>
+<blockquote>
+<p>Zero or more <code>&lt;li&gt;</code>, <code>&lt;script&gt;</code> and <code>&lt;template&gt;</code> elements.</p>
+</blockquote>
+<p>所以如果是這樣的架構</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>連結一<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>連結二<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>連結三<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>連結四<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;clearfix&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>以規範來說是有問題的。雖然我在注意到這個規範之前都是這樣寫，也沒有出過問題。不過因為這個原因，後來如果需要在 ul 清除浮動時，就改成用偽元素置入清除浮動的方式來迴避違規範了，例如 CodePen 中的 HTML 第 12-17 行。</p>
+]]></content>
+      <categories>
+        <category>鼠年全馬鐵人挑戰</category>
+      </categories>
+      <tags>
+        <tag>w3HexSchool</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>鼠年全馬鐵人挑戰 02：容易誤解的 position 特性</title>
-    <url>/blog/2020/03/29/2020-03-29-%20position/</url>
+    <url>/blog/2020/03/29/2020-03-29-position/</url>
     <content><![CDATA[<p>相對定位與絕對定位是網頁排版中常常用到的技巧之一，特別是在視覺上出現區塊內元素橫跨區塊元素的設計，例如這個 <a href="https://codepen.io/bryanchu10/pen/oNXJOKP">CodePen</a> 。在使用上，<code>position: relative;</code> 和 <code>position: absolute;</code> 經常成對出現，但也因此造成一些常見的誤解。</p>
 <span id="more"></span>
 
@@ -38,44 +137,48 @@
 <p>行內元素（inline element）原本設定 <code>width</code>、<code>height</code>、<code>margin-top</code>、<code>margin-bottom</code> 不會產生效果，<code>padding-top</code> 與 <code>padding-bottom</code> 沒有辦法撐開空間。但是設定了 <code>position: absolute;</code> 之後會帶有區塊元素的特性，這時候上述無法發揮作用的屬性都可以運作。和其它元素的空間關係則和上述「區塊元素佔據的橫向空間」說明相同。</p>
 <p>這邊容易忘記的是，因為 <code>position: absolute;</code> 讓行內元素帶有區塊元素的特性，所以在程式碼撰寫上，如果有將行內元素轉成區塊元素的需求，又剛好已經有 <code>position: absolute;</code> 設定，就不用再寫 <code>display: block;</code> 了。</p>
 ]]></content>
+      <categories>
+        <category>鼠年全馬鐵人挑戰</category>
+      </categories>
       <tags>
         <tag>w3HexSchool</tag>
         <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
-    <title>鼠年全馬鐵人挑戰 01：曾經困擾我的 float 問題</title>
-    <url>/blog/2020/03/22/2020-03-22-%20float-and-clearfix/</url>
-    <content><![CDATA[<p>六角學院最近的一次課程更新，正式從基礎課程就開始介紹 flex 排版。原本就知道現在 flex 排版已經取得主流地位了，但是看到六角課程更新，還是讓我有一種 float 排版逐漸成為歷史遺跡的感覺，也回想起學習 float 排版的過程中踩到的那些坑，決定在告別 float 之前，把曾經困擾我的 float 問題記錄下來。</p>
+    <title>鼠年全馬鐵人挑戰 03：網頁橫幅文字的半透明背景問題</title>
+    <url>/blog/2020/04/05/2020-04-05-banner-text/</url>
+    <content><![CDATA[<p>之前在練習網頁排版的時候，碰過一個小問題。雖然是小問題，但當時卻花了不少時間解決。</p>
+<p>例如像是這樣子的橫幅，該如何讓文字部分背景呈現半透明效果呢？</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-05-banner-text-2.png?alt=media&token=cf651aa5-db54-4a52-830b-059c23b55564" alt="Alt text"></p>
 <span id="more"></span>
 
-<h3 id="元素設定-float-前後的表現"><a href="#元素設定-float-前後的表現" class="headerlink" title="元素設定 float 前後的表現"></a>元素設定 float 前後的表現</h3><ul>
-<li>區塊元素佔據的橫向空間</li>
-</ul>
-<p>因為太常使用 float 了，所以很容易忘記，原本區塊元素（block element）會佔據目前身處的容器中高度範圍內所有的橫向空間。即使對區塊元素設定 width，區塊元素還是會占滿整個元素空間。設定 width，只會影響到它的 content 寬度，並沒有辦法使其不佔據所有橫向空間。如果在同一層級再擺一個元素，因為區塊元素已經佔據自身高度內的橫向空間，新元素位置會在這個區塊元素的下一行。</p>
-<p>使用了 float 之後，元素佔據的橫向空間則會是 content 寬度 + padding 寬度 + border 寬度 + margin 寬度。</p>
-<ul>
-<li>行內元素的 display 設定</li>
-</ul>
-<p>行內元素（inline element）原本設定 width、height、margin-top、margin-bottom 不會產生效果，padding-top 與 padding-bottom 沒有辦法撐開空間。但是 float 之後會帶有區塊元素的特性，這時候上述無法發揮作用的屬性都可以運作。</p>
-<p>這邊容易忘記的是，因為 float 讓行內元素帶有區塊元素的特性，所以在程式碼撰寫上，如果有將行內元素轉成區塊元素的需求，又剛好已經有 float 設定，就不用再寫 <code>display: block</code> 了。</p>
-<h3 id="ul-li-的清除浮動問題"><a href="#ul-li-的清除浮動問題" class="headerlink" title="ul li 的清除浮動問題"></a>ul li 的清除浮動問題</h3><p>考慮一個簡單的<a href="https://codepen.io/bryanchu10/pen/yLNxLOY">網頁架構</a>，在這個 CodePen 中，因為 h1 和 ul 都使用了 float，所以在 h1 和 ul 的父層元素 header 內部結尾處要清除浮動，確定 header 內部的浮動現象不會影響到 header 之外。在這邊使用偽元素的方式，在 header 標籤內加入 clearfix 這個類別選擇器後，header 的最後會產生一個可以清除浮動的偽元素。</p>
-<ul>
-<li>以浮動元素包裹浮動元素</li>
-</ul>
-<p>注意 header 內右側的連結列，不只是 ul 有使用 float，li 也有使用 float，於是產生的一個疑問：為甚麼不需要在 ul 內部結尾清除浮動，來避免 li 的浮動現象超出 ul 呢？</p>
-<p>原因是當父元素也使用了 float 的時候，子元素的 float 現象就不會影響到父元素之外，有人稱這個現象為「以浮制浮」。</p>
-<ul>
-<li>ul 架構規範</li>
-</ul>
-<p>在 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul">MDN web docs</a> ，ul 允許的內容是 </p>
-<blockquote>
-<p>Zero or more <code>&lt;li&gt;</code>, <code>&lt;script&gt;</code> and <code>&lt;template&gt;</code> elements.</p>
-</blockquote>
-<p>所以如果是這樣的架構</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>連結一<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>連結二<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>連結三<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>連結四<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;clearfix&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>以規範來說是有問題的。雖然我在注意到這個規範之前都是這樣寫，也沒有出過問題。不過因為這個原因，後來如果需要在 ul 清除浮動時，就改成用偽元素置入清除浮動的方式來迴避違規範了，例如 CodePen 中的 HTML 第 12-17 行。</p>
+<p>文字部分是用 h1 標籤撰寫，我第一個想到的作法是對 h1 設定 opacity。結果</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-05-banner-text-3.png?alt=media&token=c735b290-334c-4cb3-9e5d-2cd2e2356c2c" alt="Alt text"></p>
+<p>連文字部分也跟著半透明啦！</p>
+<p>接下來就是誤入歧途的開始，我瞭解上面的問題是因為 opaicity 調整了整個物件的透明度，於是我把 h1 用一個新的 div 包裹，在這個 div 設定白色背景和透明度，但是呈現畫面和上面一模一樣。</p>
+<p>真是令人氣餒，不過意外的知道 opacity 不只會影響被設定的物件的透明度，還會連帶的影響子元素的視覺呈現效果，也算是有所收穫。</p>
+<h3 id="rgba"><a href="#rgba" class="headerlink" title="rgba( )"></a>rgba( )</h3><p>折騰了半天，才知道在 <code>background-color</code> 使用 <code>rgba()</code> 的寫法，就可以解決這個問題了。寫法是</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background</span>: <span class="built_in">rgba</span>(red, green, blue, alpha);</span><br></pre></td></tr></table></figure>
+<p>首先依序填入紅、綠、藍三原色的色值，可以使用 0 ~ 255 的整數亮度寫法，或是用百分比 0% ~ 100% 來表示亮度。</p>
+<p>接著 alpha 代表透明度，範圍從 0.0 ~ 1.0，0 是完全穿透，1 是不透明。</p>
+<h3 id="linear-gradient"><a href="#linear-gradient" class="headerlink" title="linear-gradient( )"></a>linear-gradient( )</h3><p>後來瞭解到越來越多的 CSS 屬性設定和它們之間的關係，終於可以做出像這樣的橫幅了。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-05-banner-text-1.png?alt=media&token=8020e6fb-6ab2-4033-89ef-61dbcf8ecff6" alt="alt text"></p>
+<p>在接近狐狸頭部的部份讓底色消失，使整體更美觀。</p>
+<p>這是在 <code>background-image</code> 使用 <code>linear-gradient()</code> 的效果。寫法是</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(方向, 第一種顏色 範圍, 第二種顏色 範圍,...)</span><br></pre></td></tr></table></figure>
+
+<p>以我這個橫幅來說</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(to right, <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0.5</span>) <span class="number">40%</span>, <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>) <span class="number">60%</span>);</span><br></pre></td></tr></table></figure>
+
+<p>就是方向由左至右，到達漸變距離距離 40% 處會是 rgba(255,255,255,0.5) 這個顏色，到 60% 處會是 rgba(255,255,255,0.5) 這個顏色。</p>
+<p>由於顏色線性漸變的方向不一定是水平或是垂直，也可以設定 deg 來呈現傾斜的線性漸變效果，因此顏色變化的範圍也不一定是元素的寬度或高度，而這個顏色變化的範圍被稱為漸變距離。</p>
+<p>詳細的漸變距離計算方式可以參考 MDN web docs 在 linear-gradient 條目的 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient#Composition_of_a_linear_gradient">Composition of a linear gradient</a> 這一段落。</p>
+<p>最後，使用 linear-grdient 要注意一點，linear-gradient( ) 不能作用在 <code>background-color</code> 屬性，過去我因為習慣都用簡寫 <code>background</code> 屬性來設定各種背景資訊，以至於在不能使用簡寫的時候常犯這個錯誤。</p>
 ]]></content>
+      <categories>
+        <category>鼠年全馬鐵人挑戰</category>
+      </categories>
       <tags>
         <tag>w3HexSchool</tag>
         <tag>CSS</tag>
@@ -83,7 +186,7 @@
   </entry>
   <entry>
     <title>鼠年全馬鐵人挑戰 04：自製 select 選單樣式（上）- 連結自製選項到原本的選單</title>
-    <url>/blog/2020/04/12/2020-04-12-%20customed-select-box-1/</url>
+    <url>/blog/2020/04/12/2020-04-12-customed-select-box-1/</url>
     <content><![CDATA[<p>使用 HTML 的 select 與 option 標籤製作的下拉式選單，在每個瀏覽器有各自預設的樣式，即使用 <code>appearance: none;</code> 清掉瀏覽器預設樣式，在 CSS 使用上仍然有很大的限制，例如沒有辦法修改下拉選單周圍的 border 樣式。</p>
 <p>在 w3schools <a href="https://www.w3schools.com/howto/howto_custom_select.asp">How TO - Custom Select Box</a> 這個條目下，有自製 select 選單的參考。</p>
 <p>w3schools 的方法的優點，在於對原本 HTML 架構的調整非常少，並且 CSS 設定的部分就像是一般在設定其它元素的樣式一樣，可以自由的進行調整。運作原理是用 JS 產生新的、對應到原本 select、option 內容的 div 元素，之後用 CSS 隱藏原本的選單、控制新產生的 div 選單。</p>
@@ -157,6 +260,9 @@
 <p>再次讓迴圈登場，走過 select 每一個選項，如果跟點擊的選項內容一致，就把當前迴圈數當做新的 selectedIndex 派給 select，達成修改原本被選擇選項的效果。同時修改自製的 select-selected 內容。最後跳出迴圈。</p>
 <p>到這邊狀態如這個 <a href="https://codepen.io/bryanchu10/pen/GRpJqQv">CodePen</a>，完成了自製選項到原本的選單的連結。</p>
 ]]></content>
+      <categories>
+        <category>鼠年全馬鐵人挑戰</category>
+      </categories>
       <tags>
         <tag>w3HexSchool</tag>
         <tag>CSS</tag>
@@ -164,44 +270,8 @@
       </tags>
   </entry>
   <entry>
-    <title>鼠年全馬鐵人挑戰 03：網頁橫幅文字的半透明背景問題</title>
-    <url>/blog/2020/04/05/2020-04-05-%20banner-text/</url>
-    <content><![CDATA[<p>之前在練習網頁排版的時候，碰過一個小問題。雖然是小問題，但當時卻花了不少時間解決。</p>
-<p>例如像是這樣子的橫幅，該如何讓文字部分背景呈現半透明效果呢？</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-05-banner-text-2.png?alt=media&token=cf651aa5-db54-4a52-830b-059c23b55564" alt="Alt text"></p>
-<span id="more"></span>
-
-<p>文字部分是用 h1 標籤撰寫，我第一個想到的作法是對 h1 設定 opacity。結果</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-05-banner-text-3.png?alt=media&token=c735b290-334c-4cb3-9e5d-2cd2e2356c2c" alt="Alt text"></p>
-<p>連文字部分也跟著半透明啦！</p>
-<p>接下來就是誤入歧途的開始，我瞭解上面的問題是因為 opaicity 調整了整個物件的透明度，於是我把 h1 用一個新的 div 包裹，在這個 div 設定白色背景和透明度，但是呈現畫面和上面一模一樣。</p>
-<p>真是令人氣餒，不過意外的知道 opacity 不只會影響被設定的物件的透明度，還會連帶的影響子元素的視覺呈現效果，也算是有所收穫。</p>
-<h3 id="rgba"><a href="#rgba" class="headerlink" title="rgba( )"></a>rgba( )</h3><p>折騰了半天，才知道在 <code>background-color</code> 使用 <code>rgba()</code> 的寫法，就可以解決這個問題了。寫法是</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background</span>: <span class="built_in">rgba</span>(red, green, blue, alpha);</span><br></pre></td></tr></table></figure>
-<p>首先依序填入紅、綠、藍三原色的色值，可以使用 0 ~ 255 的整數亮度寫法，或是用百分比 0% ~ 100% 來表示亮度。</p>
-<p>接著 alpha 代表透明度，範圍從 0.0 ~ 1.0，0 是完全穿透，1 是不透明。</p>
-<h3 id="linear-gradient"><a href="#linear-gradient" class="headerlink" title="linear-gradient( )"></a>linear-gradient( )</h3><p>後來瞭解到越來越多的 CSS 屬性設定和它們之間的關係，終於可以做出像這樣的橫幅了。</p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-05-banner-text-1.png?alt=media&token=8020e6fb-6ab2-4033-89ef-61dbcf8ecff6" alt="alt text"></p>
-<p>在接近狐狸頭部的部份讓底色消失，使整體更美觀。</p>
-<p>這是在 <code>background-image</code> 使用 <code>linear-gradient()</code> 的效果。寫法是</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(方向, 第一種顏色 範圍, 第二種顏色 範圍,...)</span><br></pre></td></tr></table></figure>
-
-<p>以我這個橫幅來說</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(to right, <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0.5</span>) <span class="number">40%</span>, <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>) <span class="number">60%</span>);</span><br></pre></td></tr></table></figure>
-
-<p>就是方向由左至右，到達漸變距離距離 40% 處會是 rgba(255,255,255,0.5) 這個顏色，到 60% 處會是 rgba(255,255,255,0.5) 這個顏色。</p>
-<p>由於顏色線性漸變的方向不一定是水平或是垂直，也可以設定 deg 來呈現傾斜的線性漸變效果，因此顏色變化的範圍也不一定是元素的寬度或高度，而這個顏色變化的範圍被稱為漸變距離。</p>
-<p>詳細的漸變距離計算方式可以參考 MDN web docs 在 linear-gradient 條目的 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient#Composition_of_a_linear_gradient">Composition of a linear gradient</a> 這一段落。</p>
-<p>最後，使用 linear-grdient 要注意一點，linear-gradient( ) 不能作用在 <code>background-color</code> 屬性，過去我因為習慣都用簡寫 <code>background</code> 屬性來設定各種背景資訊，以至於在不能使用簡寫的時候常犯這個錯誤。</p>
-]]></content>
-      <tags>
-        <tag>w3HexSchool</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>鼠年全馬鐵人挑戰 05：自製 select 選單樣式（下）- 選單展開收闔</title>
-    <url>/blog/2020/04/19/2020-04-19-%20customed-select-box-2/</url>
+    <url>/blog/2020/04/19/2020-04-19-customed-select-box-2/</url>
     <content><![CDATA[<p><a href="https://bryanchu10.github.io/blog/2020/04/12/2020-04-12-%20customed-select-box-1/">上次</a>我們參考 w3schools <a href="https://www.w3schools.com/howto/howto_custom_select.asp">How To - Custom Select Box</a> 的教學自製 select 選單樣式，將自製的選單選項連結到原本的選項，使得我們點擊自製選單的選項的時候，原本的選項可以跟跟著變化。這次我們要完成選單展開收闔的 JS 撰寫。</p>
 <span id="more"></span>
 
@@ -249,6 +319,9 @@
 <p>到此完成了可以自行設計各部分 CSS 樣式的自製 select 選單，如這個 <a href="https://codepen.io/bryanchu10/pen/rNOLPOX">CodePen</a> 。</p>
 <p>參考資料：<a href="https://www.w3schools.com/howto/howto_custom_select.asp">w3schools: How TO - Custom Select Box</a></p>
 ]]></content>
+      <categories>
+        <category>鼠年全馬鐵人挑戰</category>
+      </categories>
       <tags>
         <tag>w3HexSchool</tag>
         <tag>CSS</tag>
@@ -257,7 +330,7 @@
   </entry>
   <entry>
     <title>鼠年全馬鐵人挑戰 06：假如 span 遇上 border-right？</title>
-    <url>/blog/2020/04/26/2020-04-26-%20span-border/</url>
+    <url>/blog/2020/04/26/2020-04-26-span-border/</url>
     <content><![CDATA[<p>這週在回答關於 CSS 排版的提問的時候，碰到一個有趣的問題，先上 <a href="https://codepen.io/bryanchu10/pen/abvJJEV">CodePen</a>。</p>
 <p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-26-span-border-1.png?alt=media&token=c2c047e1-12c9-4350-9892-f9a63248d195" alt="Alt text"></p>
 <p>提問者的設計大概像這個 CodePen，連結列選項之間的分隔線沒有像 a 標籤的 hover 範圍高度那麼高，所以用 li 或 a 標籤的 border-right 無法作出這個設計。他的選項的文字包在 span 標籤中，用其中一個選項的 span 做出和文字高度相同的分隔線。</p>
@@ -276,61 +349,12 @@
 <p>突然理解了為甚麼要設計 border 高度和 <code>line-height</code> 無關，在需要圈住文字的應用場合，border 高度和 <code>line-height</code> 無關反而才是我們想要的呈現方式。</p>
 <h3 id="補充資料"><a href="#補充資料" class="headerlink" title="補充資料"></a>補充資料</h3><p>關於字面、字身的介紹，可以參考 justfont 的部落格文章<a href="https://blog.justfont.com/2012/12/hanzi-type-design-1/">字型設計自己來─中文字型設計的第一課</a>。</p>
 ]]></content>
+      <categories>
+        <category>鼠年全馬鐵人挑戰</category>
+      </categories>
       <tags>
         <tag>w3HexSchool</tag>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>鼠年全馬鐵人挑戰 07：預設 VS Code 新檔案使用語法</title>
-    <url>/blog/2020/05/03/2020-05-03-doc-language-setting/</url>
-    <content><![CDATA[<p>有的時候想快速用 VS Code 寫個 HTML 檔案，常常快捷鍵 Ctrl + N 之後，就想打驚嘆號，透過 Emmet 快速產生 HTML 的基礎樣板。然後就發現沒有作用，因為這個新檔案格式未定，Emmet 無法判斷要幫你用哪一套縮寫系統。</p>
-<p>那 VS Code 能不能在產生新檔案的時候，就先預設好使用的語言呢？當然可以，地表最強編輯器可不是浪得虛名的，只有你還沒想到的功能，沒有 VS Code 做不到的功能。</p>
-<span id="more"></span>
-
-<h3 id="進入全域設置-setting-json"><a href="#進入全域設置-setting-json" class="headerlink" title="進入全域設置 setting.json"></a>進入全域設置 setting.json</h3><p>用過一陣子 VS Code 的人，應該都知道有一個叫做 setting.json 的檔案，以 json 的格式寫了各種設定，透過對這個檔案進行修改，就可以控制各種套件和 VS Code 內建的功能，達成客製專屬編輯器的目的。</p>
-<p>我剛開始用 VS Code 的時候，VS Code 的設定介面比較偏向工程端，赤裸裸的讓你看到工作區域設定、全域設定等等，然後一不小心就會進入各自的 setting.json 檔案。對於新手不是很友善，一不小心就會改壞預設設定。</p>
-<p>後來 VS Code 設定界面變得非常親民，非常貼近一般軟體的設定介面，有說明、選單、空格等等，只要按照說明就可以透過選擇選項、填上數值，來做到一些簡單的設定。</p>
-<p>不過因為可以調整的設定太多，整個界面很大，每次找我要的設定都要找一下下，雖然有搜尋系統，但還是沒有像直接修改 setting.json 那麼方便，所以我比較喜歡直接到 setting.json 檔案去進行設定，</p>
-<p>但是糟糕的是，從某一次更新開始，我竟然找不到進入全域 setting.json 的途徑了，每次都隨便亂按，從某個有提供連結的部分連過去。</p>
-<p>剛好趁這個機會，我也認真地摸索一下怎麼樣到 setting.json 比較快。</p>
-<ol>
-<li>點擊左下角齒輪，選擇「設定」</li>
-</ol>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-05-03-doc-language-setting-1.png?alt=media&token=61077fa3-bef1-415b-869f-55645373bbb8" alt="Alt text"></p>
-<ol start="2">
-<li>點擊右上角文件圖案進入 setting.json</li>
-</ol>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-05-03-doc-language-setting-2.png?alt=media&token=f0410c03-9221-41bc-a30a-57be43bfb5a1" alt="Alt text"></p>
-<p>原來 json.setting 的連結跑到右上角的文件圖案裡面了！</p>
-<h3 id="更改-setting-json"><a href="#更改-setting-json" class="headerlink" title="更改 setting.json"></a>更改 setting.json</h3><p>加入預設文件語言類型設定 <code>&quot;files.defaultLanguage&quot;: &quot;html&quot;</code></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-05-03-doc-language-setting-3.png?alt=media&token=6a208186-9acc-438d-8b53-019c377f352f" alt="Alt text"></p>
-<p>記得上一個設定的結尾如果沒有「,」的話要補上，才不會發生 json 格式錯誤。</p>
-<p>這樣一來，直接開新檔案的時候，即使沒有副檔名，預設就是使用 HTML 語法了，Emmet 也可以順利使用。</p>
-<p>不過我自己在撰寫上更常發生的狀況是，網頁寫一寫，要新增一個 HTML 或 SCSS。這時候還有一個更方便的設定方式，就是 <code>&quot;files.defaultLanguage&quot;: &quot;$&#123;activeEditorLanguage&#125;&quot;</code>，使用這個設定值的話，新開的檔案格式就會和目前使用的檔案格式相同，和實際需要的情境更接近。</p>
-]]></content>
-      <tags>
-        <tag>w3HexSchool</tag>
-        <tag>VS Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>鼠年全馬鐵人挑戰 08：自己的世界觀</title>
-    <url>/blog/2020/05/10/2020-05-10-world-view/</url>
-    <content><![CDATA[<p>本週的馬拉松文決定以心情抒發為主題。根據六角馬拉松的規則，心情抒發的文章不能超過 20%，在我的精算<del>偷懶</del>之下，每 8 週可以有一次比較輕鬆的文章撰寫。這一週決定分享一下自己學習網頁撰寫過程中，影響我很大的一個想法──以自己的世界觀去理解語法運作。</p>
-<span id="more"></span>
-
-<h3 id="自己的世界觀"><a href="#自己的世界觀" class="headerlink" title="自己的世界觀"></a>自己的世界觀</h3><p>這個想法是某一次查詢資料的時候作者提到的，已經不記得是在哪一篇文章看到的了。簡單的說，在學習語法上，不用去拘泥於所謂正確的程式運作原理，應該去形成自己的理解。舉一個簡單的例子來說，我們知道，在父元素與第一個或最後一個子元素向同一個方向 margin，並且沒有使用 border 時，會發生 margin collapse。</p>
-<p>直接觀察上述的情況，可以理解為在「在元素界線不明確」的時候，可能會發生我泥中有你，你泥中有我的狀況。一旦有了 border 之後，界線變得明確，兩者之間就不會有 margin 重疊了。</p>
-<p>這是一個用直觀現像理解與解釋非常簡單的例子。大部分的人都只熟悉在甚麼樣的情況下會發生 margin collapse，沒有辦法說明為甚麼網頁撰寫設計上會有這樣的一個坑。</p>
-<p>但是世界照常運轉，不知道這件事，並不影響我們對於後續知識的學習與應用。嚴格來說，也沒有人可以說你的解釋是錯誤的，因為在你的說法之下，的確可以準確地預測出會發生 margin collapse 的狀況。這就是形成一套自己的世界觀和解釋。</p>
-<h3 id="重塑世界觀"><a href="#重塑世界觀" class="headerlink" title="重塑世界觀"></a>重塑世界觀</h3><p>然而，如果有一天，有人問到：為甚麼父元素使用 flex 排版的時候，父元素與第一個&#x2F;最後一個子元素向同一個方向 margin，沒有使用 border 時，也不會發生 margin collapse 呢？</p>
-<p>這時候，原本的「元素界線不明確論」就受到挑戰。但是你又想到，在 flex 排版時，子元素會有 flex 內元件屬性，這些屬性還會分配父元素內部的空間。也就是說，在 flex 排版下，父元素的內部空間是被明確計算出來的。於是提出空間掌握理論：當使用到牽涉父元素內部空間定義的語法時，子元素的 margin 和父元素的 margin 就不會發生重疊，因為父元素內部空間被掌握、規範了。</p>
-<p>使用 border 的時候，一定是明確了父元素內部空間範圍，才畫的出 border 的位置。藉由解釋力更強的說法，成功的涵蓋新的現象和之前的現象。</p>
-<p>在學習的過程中，隨著碰到的案例漸漸地增多，自己的世界觀也會不斷地進行重塑，最後會變得越來越完善，甚至會發現靠近基於語法設計之初的原因。然而，比起一開始就直接生硬的吃下自己不能理解的程式面的解釋，在學習過程中不斷地確認、修正自己的理解，因為走過了探索的過程，體會和印象會更深刻。</p>
-]]></content>
-      <tags>
-        <tag>w3HexSchool</tag>
       </tags>
   </entry>
 </search>

@@ -30,21 +30,25 @@
   gtag('config', 'G-6F0RKYE4EY');
 </script>
 
-  <meta name="description" content="六角學院最近的一次課程更新，正式從基礎課程就開始介紹 flex 排版。原本就知道現在 flex 排版已經取得主流地位了，但是看到六角課程更新，還是讓我有一種 float 排版逐漸成為歷史遺跡的感覺，也回想起學習 float 排版的過程中踩到的那些坑，決定在告別 float 之前，把曾經困擾我的 float 問題記錄下來。">
+  <meta name="description" content="之前在練習網頁排版的時候，碰過一個小問題。雖然是小問題，但當時卻花了不少時間解決。 例如像是這樣子的橫幅，該如何讓文字部分背景呈現半透明效果呢？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="鼠年全馬鐵人挑戰 01：曾經困擾我的 float 問題">
-<meta property="og:url" content="https://bryanchu10.github.io/blog/2020/03/22/2020-03-22-%20float-and-clearfix/index.html">
+<meta property="og:title" content="鼠年全馬鐵人挑戰 03：網頁橫幅文字的半透明背景問題">
+<meta property="og:url" content="https://bryanchu10.github.io/blog/2020/04/05/2020-04-05-banner-text/index.html">
 <meta property="og:site_name" content="做點筆記吧">
-<meta property="og:description" content="六角學院最近的一次課程更新，正式從基礎課程就開始介紹 flex 排版。原本就知道現在 flex 排版已經取得主流地位了，但是看到六角課程更新，還是讓我有一種 float 排版逐漸成為歷史遺跡的感覺，也回想起學習 float 排版的過程中踩到的那些坑，決定在告別 float 之前，把曾經困擾我的 float 問題記錄下來。">
+<meta property="og:description" content="之前在練習網頁排版的時候，碰過一個小問題。雖然是小問題，但當時卻花了不少時間解決。 例如像是這樣子的橫幅，該如何讓文字部分背景呈現半透明效果呢？">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-03-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-08-28T16:02:13.717Z">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-05-banner-text-2.png?alt=media&token=cf651aa5-db54-4a52-830b-059c23b55564">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-05-banner-text-3.png?alt=media&token=c735b290-334c-4cb3-9e5d-2cd2e2356c2c">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-05-banner-text-1.png?alt=media&token=8020e6fb-6ab2-4033-89ef-61dbcf8ecff6">
+<meta property="article:published_time" content="2020-04-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-05T00:59:05.639Z">
 <meta property="article:author" content="Bryan Chu">
 <meta property="article:tag" content="w3HexSchool">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-05-banner-text-2.png?alt=media&token=cf651aa5-db54-4a52-830b-059c23b55564">
 
-<link rel="canonical" href="https://bryanchu10.github.io/blog/2020/03/22/2020-03-22-%20float-and-clearfix/">
+<link rel="canonical" href="https://bryanchu10.github.io/blog/2020/04/05/2020-04-05-banner-text/">
 
 
 <script id="page-configurations">
@@ -57,7 +61,7 @@
   };
 </script>
 
-  <title>鼠年全馬鐵人挑戰 01：曾經困擾我的 float 問題 | 做點筆記吧</title>
+  <title>鼠年全馬鐵人挑戰 03：網頁橫幅文字的半透明背景問題 | 做點筆記吧</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6F0RKYE4EY"></script>
     <script>
@@ -209,7 +213,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bryanchu10.github.io/blog/2020/03/22/2020-03-22-%20float-and-clearfix/">
+    <link itemprop="mainEntityOfPage" href="https://bryanchu10.github.io/blog/2020/04/05/2020-04-05-banner-text/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -222,7 +226,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          鼠年全馬鐵人挑戰 01：曾經困擾我的 float 問題
+          鼠年全馬鐵人挑戰 03：網頁橫幅文字的半透明背景問題
         </h1>
 
         <div class="post-meta">
@@ -232,15 +236,24 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2020-03-22 00:00:00" itemprop="dateCreated datePublished" datetime="2020-03-22T00:00:00+08:00">2020-03-22</time>
+              <time title="創建時間：2020-04-05 00:00:00" itemprop="dateCreated datePublished" datetime="2020-04-05T00:00:00+08:00">2020-04-05</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-08-29 00:02:13" itemprop="dateModified" datetime="2022-08-29T00:02:13+08:00">2022-08-29</time>
+                <time title="修改時間：2022-10-05 08:59:05" itemprop="dateModified" datetime="2022-10-05T08:59:05+08:00">2022-10-05</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E9%BC%A0%E5%B9%B4%E5%85%A8%E9%A6%AC%E9%90%B5%E4%BA%BA%E6%8C%91%E6%88%B0/" itemprop="url" rel="index"><span itemprop="name">鼠年全馬鐵人挑戰</span></a>
+                </span>
+            </span>
 
           
 
@@ -253,35 +266,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>六角學院最近的一次課程更新，正式從基礎課程就開始介紹 flex 排版。原本就知道現在 flex 排版已經取得主流地位了，但是看到六角課程更新，還是讓我有一種 float 排版逐漸成為歷史遺跡的感覺，也回想起學習 float 排版的過程中踩到的那些坑，決定在告別 float 之前，把曾經困擾我的 float 問題記錄下來。</p>
+        <p>之前在練習網頁排版的時候，碰過一個小問題。雖然是小問題，但當時卻花了不少時間解決。</p>
+<p>例如像是這樣子的橫幅，該如何讓文字部分背景呈現半透明效果呢？</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-05-banner-text-2.png?alt=media&token=cf651aa5-db54-4a52-830b-059c23b55564" alt="Alt text"></p>
 <span id="more"></span>
 
-<h3 id="元素設定-float-前後的表現"><a href="#元素設定-float-前後的表現" class="headerlink" title="元素設定 float 前後的表現"></a>元素設定 float 前後的表現</h3><ul>
-<li>區塊元素佔據的橫向空間</li>
-</ul>
-<p>因為太常使用 float 了，所以很容易忘記，原本區塊元素（block element）會佔據目前身處的容器中高度範圍內所有的橫向空間。即使對區塊元素設定 width，區塊元素還是會占滿整個元素空間。設定 width，只會影響到它的 content 寬度，並沒有辦法使其不佔據所有橫向空間。如果在同一層級再擺一個元素，因為區塊元素已經佔據自身高度內的橫向空間，新元素位置會在這個區塊元素的下一行。</p>
-<p>使用了 float 之後，元素佔據的橫向空間則會是 content 寬度 + padding 寬度 + border 寬度 + margin 寬度。</p>
-<ul>
-<li>行內元素的 display 設定</li>
-</ul>
-<p>行內元素（inline element）原本設定 width、height、margin-top、margin-bottom 不會產生效果，padding-top 與 padding-bottom 沒有辦法撐開空間。但是 float 之後會帶有區塊元素的特性，這時候上述無法發揮作用的屬性都可以運作。</p>
-<p>這邊容易忘記的是，因為 float 讓行內元素帶有區塊元素的特性，所以在程式碼撰寫上，如果有將行內元素轉成區塊元素的需求，又剛好已經有 float 設定，就不用再寫 <code>display: block</code> 了。</p>
-<h3 id="ul-li-的清除浮動問題"><a href="#ul-li-的清除浮動問題" class="headerlink" title="ul li 的清除浮動問題"></a>ul li 的清除浮動問題</h3><p>考慮一個簡單的<a target="_blank" rel="noopener" href="https://codepen.io/bryanchu10/pen/yLNxLOY">網頁架構</a>，在這個 CodePen 中，因為 h1 和 ul 都使用了 float，所以在 h1 和 ul 的父層元素 header 內部結尾處要清除浮動，確定 header 內部的浮動現象不會影響到 header 之外。在這邊使用偽元素的方式，在 header 標籤內加入 clearfix 這個類別選擇器後，header 的最後會產生一個可以清除浮動的偽元素。</p>
-<ul>
-<li>以浮動元素包裹浮動元素</li>
-</ul>
-<p>注意 header 內右側的連結列，不只是 ul 有使用 float，li 也有使用 float，於是產生的一個疑問：為甚麼不需要在 ul 內部結尾清除浮動，來避免 li 的浮動現象超出 ul 呢？</p>
-<p>原因是當父元素也使用了 float 的時候，子元素的 float 現象就不會影響到父元素之外，有人稱這個現象為「以浮制浮」。</p>
-<ul>
-<li>ul 架構規範</li>
-</ul>
-<p>在 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul">MDN web docs</a> ，ul 允許的內容是 </p>
-<blockquote>
-<p>Zero or more <code>&lt;li&gt;</code>, <code>&lt;script&gt;</code> and <code>&lt;template&gt;</code> elements.</p>
-</blockquote>
-<p>所以如果是這樣的架構</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>連結一<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>連結二<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>連結三<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>連結四<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;clearfix&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>以規範來說是有問題的。雖然我在注意到這個規範之前都是這樣寫，也沒有出過問題。不過因為這個原因，後來如果需要在 ul 清除浮動時，就改成用偽元素置入清除浮動的方式來迴避違規範了，例如 CodePen 中的 HTML 第 12-17 行。</p>
+<p>文字部分是用 h1 標籤撰寫，我第一個想到的作法是對 h1 設定 opacity。結果</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-05-banner-text-3.png?alt=media&token=c735b290-334c-4cb3-9e5d-2cd2e2356c2c" alt="Alt text"></p>
+<p>連文字部分也跟著半透明啦！</p>
+<p>接下來就是誤入歧途的開始，我瞭解上面的問題是因為 opaicity 調整了整個物件的透明度，於是我把 h1 用一個新的 div 包裹，在這個 div 設定白色背景和透明度，但是呈現畫面和上面一模一樣。</p>
+<p>真是令人氣餒，不過意外的知道 opacity 不只會影響被設定的物件的透明度，還會連帶的影響子元素的視覺呈現效果，也算是有所收穫。</p>
+<h3 id="rgba"><a href="#rgba" class="headerlink" title="rgba( )"></a>rgba( )</h3><p>折騰了半天，才知道在 <code>background-color</code> 使用 <code>rgba()</code> 的寫法，就可以解決這個問題了。寫法是</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background</span>: <span class="built_in">rgba</span>(red, green, blue, alpha);</span><br></pre></td></tr></table></figure>
+<p>首先依序填入紅、綠、藍三原色的色值，可以使用 0 ~ 255 的整數亮度寫法，或是用百分比 0% ~ 100% 來表示亮度。</p>
+<p>接著 alpha 代表透明度，範圍從 0.0 ~ 1.0，0 是完全穿透，1 是不透明。</p>
+<h3 id="linear-gradient"><a href="#linear-gradient" class="headerlink" title="linear-gradient( )"></a>linear-gradient( )</h3><p>後來瞭解到越來越多的 CSS 屬性設定和它們之間的關係，終於可以做出像這樣的橫幅了。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-05-banner-text-1.png?alt=media&token=8020e6fb-6ab2-4033-89ef-61dbcf8ecff6" alt="alt text"></p>
+<p>在接近狐狸頭部的部份讓底色消失，使整體更美觀。</p>
+<p>這是在 <code>background-image</code> 使用 <code>linear-gradient()</code> 的效果。寫法是</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(方向, 第一種顏色 範圍, 第二種顏色 範圍,...)</span><br></pre></td></tr></table></figure>
+
+<p>以我這個橫幅來說</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(to right, <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0.5</span>) <span class="number">40%</span>, <span class="built_in">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>) <span class="number">60%</span>);</span><br></pre></td></tr></table></figure>
+
+<p>就是方向由左至右，到達漸變距離距離 40% 處會是 rgba(255,255,255,0.5) 這個顏色，到 60% 處會是 rgba(255,255,255,0.5) 這個顏色。</p>
+<p>由於顏色線性漸變的方向不一定是水平或是垂直，也可以設定 deg 來呈現傾斜的線性漸變效果，因此顏色變化的範圍也不一定是元素的寬度或高度，而這個顏色變化的範圍被稱為漸變距離。</p>
+<p>詳細的漸變距離計算方式可以參考 MDN web docs 在 linear-gradient 條目的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient#Composition_of_a_linear_gradient">Composition of a linear gradient</a> 這一段落。</p>
+<p>最後，使用 linear-grdient 要注意一點，linear-gradient( ) 不能作用在 <code>background-color</code> 屬性，過去我因為習慣都用簡寫 <code>background</code> 屬性來設定各種背景資訊，以至於在不能使用簡寫的時候常犯這個錯誤。</p>
 
     </div>
 
@@ -300,10 +311,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/blog/2020/03/29/2020-03-29-%20position/" rel="next" title="鼠年全馬鐵人挑戰 02：容易誤解的 position 特性">
-      鼠年全馬鐵人挑戰 02：容易誤解的 position 特性 <i class="fa fa-chevron-right"></i>
+    <a href="/blog/2020/03/29/2020-03-29-position/" rel="prev" title="鼠年全馬鐵人挑戰 02：容易誤解的 position 特性">
+      <i class="fa fa-chevron-left"></i> 鼠年全馬鐵人挑戰 02：容易誤解的 position 特性
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2020/04/12/2020-04-12-customed-select-box-1/" rel="next" title="鼠年全馬鐵人挑戰 04：自製 select 選單樣式（上）- 連結自製選項到原本的選單">
+      鼠年全馬鐵人挑戰 04：自製 select 選單樣式（上）- 連結自製選項到原本的選單 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -364,7 +378,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E7%B4%A0%E8%A8%AD%E5%AE%9A-float-%E5%89%8D%E5%BE%8C%E7%9A%84%E8%A1%A8%E7%8F%BE"><span class="nav-number">1.</span> <span class="nav-text">元素設定 float 前後的表現</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ul-li-%E7%9A%84%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8B%95%E5%95%8F%E9%A1%8C"><span class="nav-number">2.</span> <span class="nav-text">ul li 的清除浮動問題</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#rgba"><span class="nav-number">1.</span> <span class="nav-text">rgba( )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linear-gradient"><span class="nav-number">2.</span> <span class="nav-text">linear-gradient( )</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -381,6 +395,12 @@
           <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">文章</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
@@ -492,7 +512,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'blog',
       owner       : 'bryanchu10',
       admin       : ['bryanchu10'],
-      id          : '2f9bb9e7271236c1299562ca4a4cc3f5',
+      id          : 'f876a6674c32347bb0d416df816ff6ab',
         language: '',
       distractionFreeMode: true
     });
