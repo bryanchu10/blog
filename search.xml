@@ -1,64 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>鼠年全馬鐵人挑戰 07：預設 VS Code 新檔案使用語法</title>
-    <url>/blog/2020/05/03/2020-05-03-doc-language-setting/</url>
-    <content><![CDATA[<p>有的時候想快速用 VS Code 寫個 HTML 檔案，常常快捷鍵 Ctrl + N 之後，就想打驚嘆號，透過 Emmet 快速產生 HTML 的基礎樣板。然後就發現沒有作用，因為這個新檔案格式未定，Emmet 無法判斷要幫你用哪一套縮寫系統。</p>
-<p>那 VS Code 能不能在產生新檔案的時候，就先預設好使用的語言呢？當然可以，地表最強編輯器可不是浪得虛名的，只有你還沒想到的功能，沒有 VS Code 做不到的功能。</p>
-<span id="more"></span>
-
-<h3 id="進入全域設置-setting-json"><a href="#進入全域設置-setting-json" class="headerlink" title="進入全域設置 setting.json"></a>進入全域設置 setting.json</h3><p>用過一陣子 VS Code 的人，應該都知道有一個叫做 setting.json 的檔案，以 json 的格式寫了各種設定，透過對這個檔案進行修改，就可以控制各種套件和 VS Code 內建的功能，達成客製專屬編輯器的目的。</p>
-<p>我剛開始用 VS Code 的時候，VS Code 的設定介面比較偏向工程端，赤裸裸的讓你看到工作區域設定、全域設定等等，然後一不小心就會進入各自的 setting.json 檔案。對於新手不是很友善，一不小心就會改壞預設設定。</p>
-<p>後來 VS Code 設定界面變得非常親民，非常貼近一般軟體的設定介面，有說明、選單、空格等等，只要按照說明就可以透過選擇選項、填上數值，來做到一些簡單的設定。</p>
-<p>不過因為可以調整的設定太多，整個界面很大，每次找我要的設定都要找一下下，雖然有搜尋系統，但還是沒有像直接修改 setting.json 那麼方便，所以我比較喜歡直接到 setting.json 檔案去進行設定，</p>
-<p>但是糟糕的是，從某一次更新開始，我竟然找不到進入全域 setting.json 的途徑了，每次都隨便亂按，從某個有提供連結的部分連過去。</p>
-<p>剛好趁這個機會，我也認真地摸索一下怎麼樣到 setting.json 比較快。</p>
-<ol>
-<li>點擊左下角齒輪，選擇「設定」</li>
-</ol>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-05-03-doc-language-setting-1.png?alt=media&token=61077fa3-bef1-415b-869f-55645373bbb8" alt="Alt text"></p>
-<ol start="2">
-<li>點擊右上角文件圖案進入 setting.json</li>
-</ol>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-05-03-doc-language-setting-2.png?alt=media&token=f0410c03-9221-41bc-a30a-57be43bfb5a1" alt="Alt text"></p>
-<p>原來 json.setting 的連結跑到右上角的文件圖案裡面了！</p>
-<h3 id="更改-setting-json"><a href="#更改-setting-json" class="headerlink" title="更改 setting.json"></a>更改 setting.json</h3><p>加入預設文件語言類型設定 <code>&quot;files.defaultLanguage&quot;: &quot;html&quot;</code></p>
-<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-05-03-doc-language-setting-3.png?alt=media&token=6a208186-9acc-438d-8b53-019c377f352f" alt="Alt text"></p>
-<p>記得上一個設定的結尾如果沒有「,」的話要補上，才不會發生 json 格式錯誤。</p>
-<p>這樣一來，直接開新檔案的時候，即使沒有副檔名，預設就是使用 HTML 語法了，Emmet 也可以順利使用。</p>
-<p>不過我自己在撰寫上更常發生的狀況是，網頁寫一寫，要新增一個 HTML 或 SCSS。這時候還有一個更方便的設定方式，就是 <code>&quot;files.defaultLanguage&quot;: &quot;$&#123;activeEditorLanguage&#125;&quot;</code>，使用這個設定值的話，新開的檔案格式就會和目前使用的檔案格式相同，和實際需要的情境更接近。</p>
-]]></content>
-      <categories>
-        <category>鼠年全馬鐵人挑戰</category>
-      </categories>
-      <tags>
-        <tag>w3HexSchool</tag>
-        <tag>VS Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>鼠年全馬鐵人挑戰 08：自己的世界觀</title>
-    <url>/blog/2020/05/10/2020-05-10-world-view/</url>
-    <content><![CDATA[<p>本週的馬拉松文決定以心情抒發為主題。根據六角馬拉松的規則，心情抒發的文章不能超過 20%，在我的精算<del>偷懶</del>之下，每 8 週可以有一次比較輕鬆的文章撰寫。這一週決定分享一下自己學習網頁撰寫過程中，影響我很大的一個想法──以自己的世界觀去理解語法運作。</p>
-<span id="more"></span>
-
-<h3 id="自己的世界觀"><a href="#自己的世界觀" class="headerlink" title="自己的世界觀"></a>自己的世界觀</h3><p>這個想法是某一次查詢資料的時候作者提到的，已經不記得是在哪一篇文章看到的了。簡單的說，在學習語法上，不用去拘泥於所謂正確的程式運作原理，應該去形成自己的理解。舉一個簡單的例子來說，我們知道，在父元素與第一個或最後一個子元素向同一個方向 margin，並且沒有使用 border 時，會發生 margin collapse。</p>
-<p>直接觀察上述的情況，可以理解為在「在元素界線不明確」的時候，可能會發生我泥中有你，你泥中有我的狀況。一旦有了 border 之後，界線變得明確，兩者之間就不會有 margin 重疊了。</p>
-<p>這是一個用直觀現像理解與解釋非常簡單的例子。大部分的人都只熟悉在甚麼樣的情況下會發生 margin collapse，沒有辦法說明為甚麼網頁撰寫設計上會有這樣的一個坑。</p>
-<p>但是世界照常運轉，不知道這件事，並不影響我們對於後續知識的學習與應用。嚴格來說，也沒有人可以說你的解釋是錯誤的，因為在你的說法之下，的確可以準確地預測出會發生 margin collapse 的狀況。這就是形成一套自己的世界觀和解釋。</p>
-<h3 id="重塑世界觀"><a href="#重塑世界觀" class="headerlink" title="重塑世界觀"></a>重塑世界觀</h3><p>然而，如果有一天，有人問到：為甚麼父元素使用 flex 排版的時候，父元素與第一個&#x2F;最後一個子元素向同一個方向 margin，沒有使用 border 時，也不會發生 margin collapse 呢？</p>
-<p>這時候，原本的「元素界線不明確論」就受到挑戰。但是你又想到，在 flex 排版時，子元素會有 flex 內元件屬性，這些屬性還會分配父元素內部的空間。也就是說，在 flex 排版下，父元素的內部空間是被明確計算出來的。於是提出空間掌握理論：當使用到牽涉父元素內部空間定義的語法時，子元素的 margin 和父元素的 margin 就不會發生重疊，因為父元素內部空間被掌握、規範了。</p>
-<p>使用 border 的時候，一定是明確了父元素內部空間範圍，才畫的出 border 的位置。藉由解釋力更強的說法，成功的涵蓋新的現象和之前的現象。</p>
-<p>在學習的過程中，隨著碰到的案例漸漸地增多，自己的世界觀也會不斷地進行重塑，最後會變得越來越完善，甚至會發現靠近基於語法設計之初的原因。然而，比起一開始就直接生硬的吃下自己不能理解的程式面的解釋，在學習過程中不斷地確認、修正自己的理解，因為走過了探索的過程，體會和印象會更深刻。</p>
-]]></content>
-      <categories>
-        <category>鼠年全馬鐵人挑戰</category>
-      </categories>
-      <tags>
-        <tag>w3HexSchool</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>鼠年全馬鐵人挑戰 01：曾經困擾我的 float 問題</title>
     <url>/blog/2020/03/22/2020-03-22-float-and-clearfix/</url>
     <content><![CDATA[<p>六角學院最近的一次課程更新，正式從基礎課程就開始介紹 flex 排版。原本就知道現在 flex 排版已經取得主流地位了，但是看到六角課程更新，還是讓我有一種 float 排版逐漸成為歷史遺跡的感覺，也回想起學習 float 排版的過程中踩到的那些坑，決定在告別 float 之前，把曾經困擾我的 float 問題記錄下來。</p>
@@ -355,6 +297,64 @@
       <tags>
         <tag>w3HexSchool</tag>
         <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>鼠年全馬鐵人挑戰 07：預設 VS Code 新檔案使用語法</title>
+    <url>/blog/2020/05/03/2020-05-03-doc-language-setting/</url>
+    <content><![CDATA[<p>有的時候想快速用 VS Code 寫個 HTML 檔案，常常快捷鍵 Ctrl + N 之後，就想打驚嘆號，透過 Emmet 快速產生 HTML 的基礎樣板。然後就發現沒有作用，因為這個新檔案格式未定，Emmet 無法判斷要幫你用哪一套縮寫系統。</p>
+<p>那 VS Code 能不能在產生新檔案的時候，就先預設好使用的語言呢？當然可以，地表最強編輯器可不是浪得虛名的，只有你還沒想到的功能，沒有 VS Code 做不到的功能。</p>
+<span id="more"></span>
+
+<h3 id="進入全域設置-setting-json"><a href="#進入全域設置-setting-json" class="headerlink" title="進入全域設置 setting.json"></a>進入全域設置 setting.json</h3><p>用過一陣子 VS Code 的人，應該都知道有一個叫做 setting.json 的檔案，以 json 的格式寫了各種設定，透過對這個檔案進行修改，就可以控制各種套件和 VS Code 內建的功能，達成客製專屬編輯器的目的。</p>
+<p>我剛開始用 VS Code 的時候，VS Code 的設定介面比較偏向工程端，赤裸裸的讓你看到工作區域設定、全域設定等等，然後一不小心就會進入各自的 setting.json 檔案。對於新手不是很友善，一不小心就會改壞預設設定。</p>
+<p>後來 VS Code 設定界面變得非常親民，非常貼近一般軟體的設定介面，有說明、選單、空格等等，只要按照說明就可以透過選擇選項、填上數值，來做到一些簡單的設定。</p>
+<p>不過因為可以調整的設定太多，整個界面很大，每次找我要的設定都要找一下下，雖然有搜尋系統，但還是沒有像直接修改 setting.json 那麼方便，所以我比較喜歡直接到 setting.json 檔案去進行設定，</p>
+<p>但是糟糕的是，從某一次更新開始，我竟然找不到進入全域 setting.json 的途徑了，每次都隨便亂按，從某個有提供連結的部分連過去。</p>
+<p>剛好趁這個機會，我也認真地摸索一下怎麼樣到 setting.json 比較快。</p>
+<ol>
+<li>點擊左下角齒輪，選擇「設定」</li>
+</ol>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-05-03-doc-language-setting-1.png?alt=media&token=61077fa3-bef1-415b-869f-55645373bbb8" alt="Alt text"></p>
+<ol start="2">
+<li>點擊右上角文件圖案進入 setting.json</li>
+</ol>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-05-03-doc-language-setting-2.png?alt=media&token=f0410c03-9221-41bc-a30a-57be43bfb5a1" alt="Alt text"></p>
+<p>原來 json.setting 的連結跑到右上角的文件圖案裡面了！</p>
+<h3 id="更改-setting-json"><a href="#更改-setting-json" class="headerlink" title="更改 setting.json"></a>更改 setting.json</h3><p>加入預設文件語言類型設定 <code>&quot;files.defaultLanguage&quot;: &quot;html&quot;</code></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-05-03-doc-language-setting-3.png?alt=media&token=6a208186-9acc-438d-8b53-019c377f352f" alt="Alt text"></p>
+<p>記得上一個設定的結尾如果沒有「,」的話要補上，才不會發生 json 格式錯誤。</p>
+<p>這樣一來，直接開新檔案的時候，即使沒有副檔名，預設就是使用 HTML 語法了，Emmet 也可以順利使用。</p>
+<p>不過我自己在撰寫上更常發生的狀況是，網頁寫一寫，要新增一個 HTML 或 SCSS。這時候還有一個更方便的設定方式，就是 <code>&quot;files.defaultLanguage&quot;: &quot;$&#123;activeEditorLanguage&#125;&quot;</code>，使用這個設定值的話，新開的檔案格式就會和目前使用的檔案格式相同，和實際需要的情境更接近。</p>
+]]></content>
+      <categories>
+        <category>鼠年全馬鐵人挑戰</category>
+      </categories>
+      <tags>
+        <tag>w3HexSchool</tag>
+        <tag>VS Code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>鼠年全馬鐵人挑戰 08：自己的世界觀</title>
+    <url>/blog/2020/05/10/2020-05-10-world-view/</url>
+    <content><![CDATA[<p>本週的馬拉松文決定以心情抒發為主題。根據六角馬拉松的規則，心情抒發的文章不能超過 20%，在我的精算<del>偷懶</del>之下，每 8 週可以有一次比較輕鬆的文章撰寫。這一週決定分享一下自己學習網頁撰寫過程中，影響我很大的一個想法──以自己的世界觀去理解語法運作。</p>
+<span id="more"></span>
+
+<h3 id="自己的世界觀"><a href="#自己的世界觀" class="headerlink" title="自己的世界觀"></a>自己的世界觀</h3><p>這個想法是某一次查詢資料的時候作者提到的，已經不記得是在哪一篇文章看到的了。簡單的說，在學習語法上，不用去拘泥於所謂正確的程式運作原理，應該去形成自己的理解。舉一個簡單的例子來說，我們知道，在父元素與第一個或最後一個子元素向同一個方向 margin，並且沒有使用 border 時，會發生 margin collapse。</p>
+<p>直接觀察上述的情況，可以理解為在「在元素界線不明確」的時候，可能會發生我泥中有你，你泥中有我的狀況。一旦有了 border 之後，界線變得明確，兩者之間就不會有 margin 重疊了。</p>
+<p>這是一個用直觀現像理解與解釋非常簡單的例子。大部分的人都只熟悉在甚麼樣的情況下會發生 margin collapse，沒有辦法說明為甚麼網頁撰寫設計上會有這樣的一個坑。</p>
+<p>但是世界照常運轉，不知道這件事，並不影響我們對於後續知識的學習與應用。嚴格來說，也沒有人可以說你的解釋是錯誤的，因為在你的說法之下，的確可以準確地預測出會發生 margin collapse 的狀況。這就是形成一套自己的世界觀和解釋。</p>
+<h3 id="重塑世界觀"><a href="#重塑世界觀" class="headerlink" title="重塑世界觀"></a>重塑世界觀</h3><p>然而，如果有一天，有人問到：為甚麼父元素使用 flex 排版的時候，父元素與第一個&#x2F;最後一個子元素向同一個方向 margin，沒有使用 border 時，也不會發生 margin collapse 呢？</p>
+<p>這時候，原本的「元素界線不明確論」就受到挑戰。但是你又想到，在 flex 排版時，子元素會有 flex 內元件屬性，這些屬性還會分配父元素內部的空間。也就是說，在 flex 排版下，父元素的內部空間是被明確計算出來的。於是提出空間掌握理論：當使用到牽涉父元素內部空間定義的語法時，子元素的 margin 和父元素的 margin 就不會發生重疊，因為父元素內部空間被掌握、規範了。</p>
+<p>使用 border 的時候，一定是明確了父元素內部空間範圍，才畫的出 border 的位置。藉由解釋力更強的說法，成功的涵蓋新的現象和之前的現象。</p>
+<p>在學習的過程中，隨著碰到的案例漸漸地增多，自己的世界觀也會不斷地進行重塑，最後會變得越來越完善，甚至會發現靠近基於語法設計之初的原因。然而，比起一開始就直接生硬的吃下自己不能理解的程式面的解釋，在學習過程中不斷地確認、修正自己的理解，因為走過了探索的過程，體會和印象會更深刻。</p>
+]]></content>
+      <categories>
+        <category>鼠年全馬鐵人挑戰</category>
+      </categories>
+      <tags>
+        <tag>w3HexSchool</tag>
       </tags>
   </entry>
 </search>
