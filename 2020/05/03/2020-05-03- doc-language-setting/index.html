@@ -30,21 +30,25 @@
   gtag('config', 'G-6F0RKYE4EY');
 </script>
 
-  <meta name="description" content="六角學院最近的一次課程更新，正式從基礎課程就開始介紹 flex 排版。原本就知道現在 flex 排版已經取得主流地位了，但是看到六角課程更新，還是讓我有一種 float 排版逐漸成為歷史遺跡的感覺，也回想起學習 float 排版的過程中踩到的那些坑，決定在告別 float 之前，把曾經困擾我的 float 問題記錄下來。">
+  <meta name="description" content="有的時候想快速用 VS Code 寫個 HTML 檔案，常常快捷鍵 Ctrl + N 之後，就想打驚嘆號，透過 Emmet 快速產生 HTML 的基礎樣板。然後就發現沒有作用，因為這個新檔案格式未定，Emmet 無法判斷要幫你用哪一套縮寫系統。 那 VS Code 能不能在產生新檔案的時候，就先預設好使用的語言呢？當然可以，地表最強編輯器可不是浪得虛名的，只有你還沒想到的功能，沒有 VS Code">
 <meta property="og:type" content="article">
-<meta property="og:title" content="鼠年全馬鐵人挑戰 01：曾經困擾我的 float 問題">
-<meta property="og:url" content="https://bryanchu10.github.io/blog/2020/03/22/2020-03-22-float-and-clearfix/index.html">
+<meta property="og:title" content="鼠年全馬鐵人挑戰 07：預設 VS Code 新檔案使用語法">
+<meta property="og:url" content="https://bryanchu10.github.io/blog/2020/05/03/2020-05-03-%20doc-language-setting/index.html">
 <meta property="og:site_name" content="做點筆記吧">
-<meta property="og:description" content="六角學院最近的一次課程更新，正式從基礎課程就開始介紹 flex 排版。原本就知道現在 flex 排版已經取得主流地位了，但是看到六角課程更新，還是讓我有一種 float 排版逐漸成為歷史遺跡的感覺，也回想起學習 float 排版的過程中踩到的那些坑，決定在告別 float 之前，把曾經困擾我的 float 問題記錄下來。">
+<meta property="og:description" content="有的時候想快速用 VS Code 寫個 HTML 檔案，常常快捷鍵 Ctrl + N 之後，就想打驚嘆號，透過 Emmet 快速產生 HTML 的基礎樣板。然後就發現沒有作用，因為這個新檔案格式未定，Emmet 無法判斷要幫你用哪一套縮寫系統。 那 VS Code 能不能在產生新檔案的時候，就先預設好使用的語言呢？當然可以，地表最強編輯器可不是浪得虛名的，只有你還沒想到的功能，沒有 VS Code">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-03-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-10-05T00:58:58.801Z">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-05-03-doc-language-setting-1.png?alt=media&token=61077fa3-bef1-415b-869f-55645373bbb8">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-05-03-doc-language-setting-2.png?alt=media&token=f0410c03-9221-41bc-a30a-57be43bfb5a1">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-05-03-doc-language-setting-3.png?alt=media&token=6a208186-9acc-438d-8b53-019c377f352f">
+<meta property="article:published_time" content="2020-05-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-05T00:59:19.151Z">
 <meta property="article:author" content="Bryan Chu">
 <meta property="article:tag" content="w3HexSchool">
-<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="VS Code">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-05-03-doc-language-setting-1.png?alt=media&token=61077fa3-bef1-415b-869f-55645373bbb8">
 
-<link rel="canonical" href="https://bryanchu10.github.io/blog/2020/03/22/2020-03-22-float-and-clearfix/">
+<link rel="canonical" href="https://bryanchu10.github.io/blog/2020/05/03/2020-05-03-%20doc-language-setting/">
 
 
 <script id="page-configurations">
@@ -57,7 +61,7 @@
   };
 </script>
 
-  <title>鼠年全馬鐵人挑戰 01：曾經困擾我的 float 問題 | 做點筆記吧</title>
+  <title>鼠年全馬鐵人挑戰 07：預設 VS Code 新檔案使用語法 | 做點筆記吧</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6F0RKYE4EY"></script>
     <script>
@@ -210,7 +214,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bryanchu10.github.io/blog/2020/03/22/2020-03-22-float-and-clearfix/">
+    <link itemprop="mainEntityOfPage" href="https://bryanchu10.github.io/blog/2020/05/03/2020-05-03-%20doc-language-setting/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -223,7 +227,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          鼠年全馬鐵人挑戰 01：曾經困擾我的 float 問題
+          鼠年全馬鐵人挑戰 07：預設 VS Code 新檔案使用語法
         </h1>
 
         <div class="post-meta">
@@ -233,14 +237,14 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2020-03-22 00:00:00" itemprop="dateCreated datePublished" datetime="2020-03-22T00:00:00+08:00">2020-03-22</time>
+              <time title="創建時間：2020-05-03 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-03T00:00:00+08:00">2020-05-03</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-10-05 08:58:58" itemprop="dateModified" datetime="2022-10-05T08:58:58+08:00">2022-10-05</time>
+                <time title="修改時間：2022-10-05 08:59:19" itemprop="dateModified" datetime="2022-10-05T08:59:19+08:00">2022-10-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -263,35 +267,30 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>六角學院最近的一次課程更新，正式從基礎課程就開始介紹 flex 排版。原本就知道現在 flex 排版已經取得主流地位了，但是看到六角課程更新，還是讓我有一種 float 排版逐漸成為歷史遺跡的感覺，也回想起學習 float 排版的過程中踩到的那些坑，決定在告別 float 之前，把曾經困擾我的 float 問題記錄下來。</p>
+        <p>有的時候想快速用 VS Code 寫個 HTML 檔案，常常快捷鍵 Ctrl + N 之後，就想打驚嘆號，透過 Emmet 快速產生 HTML 的基礎樣板。然後就發現沒有作用，因為這個新檔案格式未定，Emmet 無法判斷要幫你用哪一套縮寫系統。</p>
+<p>那 VS Code 能不能在產生新檔案的時候，就先預設好使用的語言呢？當然可以，地表最強編輯器可不是浪得虛名的，只有你還沒想到的功能，沒有 VS Code 做不到的功能。</p>
 <span id="more"></span>
 
-<h3 id="元素設定-float-前後的表現"><a href="#元素設定-float-前後的表現" class="headerlink" title="元素設定 float 前後的表現"></a>元素設定 float 前後的表現</h3><ul>
-<li>區塊元素佔據的橫向空間</li>
-</ul>
-<p>因為太常使用 float 了，所以很容易忘記，原本區塊元素（block element）會佔據目前身處的容器中高度範圍內所有的橫向空間。即使對區塊元素設定 width，區塊元素還是會占滿整個元素空間。設定 width，只會影響到它的 content 寬度，並沒有辦法使其不佔據所有橫向空間。如果在同一層級再擺一個元素，因為區塊元素已經佔據自身高度內的橫向空間，新元素位置會在這個區塊元素的下一行。</p>
-<p>使用了 float 之後，元素佔據的橫向空間則會是 content 寬度 + padding 寬度 + border 寬度 + margin 寬度。</p>
-<ul>
-<li>行內元素的 display 設定</li>
-</ul>
-<p>行內元素（inline element）原本設定 width、height、margin-top、margin-bottom 不會產生效果，padding-top 與 padding-bottom 沒有辦法撐開空間。但是 float 之後會帶有區塊元素的特性，這時候上述無法發揮作用的屬性都可以運作。</p>
-<p>這邊容易忘記的是，因為 float 讓行內元素帶有區塊元素的特性，所以在程式碼撰寫上，如果有將行內元素轉成區塊元素的需求，又剛好已經有 float 設定，就不用再寫 <code>display: block</code> 了。</p>
-<h3 id="ul-li-的清除浮動問題"><a href="#ul-li-的清除浮動問題" class="headerlink" title="ul li 的清除浮動問題"></a>ul li 的清除浮動問題</h3><p>考慮一個簡單的<a target="_blank" rel="noopener" href="https://codepen.io/bryanchu10/pen/yLNxLOY">網頁架構</a>，在這個 CodePen 中，因為 h1 和 ul 都使用了 float，所以在 h1 和 ul 的父層元素 header 內部結尾處要清除浮動，確定 header 內部的浮動現象不會影響到 header 之外。在這邊使用偽元素的方式，在 header 標籤內加入 clearfix 這個類別選擇器後，header 的最後會產生一個可以清除浮動的偽元素。</p>
-<ul>
-<li>以浮動元素包裹浮動元素</li>
-</ul>
-<p>注意 header 內右側的連結列，不只是 ul 有使用 float，li 也有使用 float，於是產生的一個疑問：為甚麼不需要在 ul 內部結尾清除浮動，來避免 li 的浮動現象超出 ul 呢？</p>
-<p>原因是當父元素也使用了 float 的時候，子元素的 float 現象就不會影響到父元素之外，有人稱這個現象為「以浮制浮」。</p>
-<ul>
-<li>ul 架構規範</li>
-</ul>
-<p>在 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul">MDN web docs</a> ，ul 允許的內容是 </p>
-<blockquote>
-<p>Zero or more <code>&lt;li&gt;</code>, <code>&lt;script&gt;</code> and <code>&lt;template&gt;</code> elements.</p>
-</blockquote>
-<p>所以如果是這樣的架構</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>連結一<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>連結二<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>連結三<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>連結四<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;clearfix&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>以規範來說是有問題的。雖然我在注意到這個規範之前都是這樣寫，也沒有出過問題。不過因為這個原因，後來如果需要在 ul 清除浮動時，就改成用偽元素置入清除浮動的方式來迴避違規範了，例如 CodePen 中的 HTML 第 12-17 行。</p>
+<h3 id="進入全域設置-setting-json"><a href="#進入全域設置-setting-json" class="headerlink" title="進入全域設置 setting.json"></a>進入全域設置 setting.json</h3><p>用過一陣子 VS Code 的人，應該都知道有一個叫做 setting.json 的檔案，以 json 的格式寫了各種設定，透過對這個檔案進行修改，就可以控制各種套件和 VS Code 內建的功能，達成客製專屬編輯器的目的。</p>
+<p>我剛開始用 VS Code 的時候，VS Code 的設定介面比較偏向工程端，赤裸裸的讓你看到工作區域設定、全域設定等等，然後一不小心就會進入各自的 setting.json 檔案。對於新手不是很友善，一不小心就會改壞預設設定。</p>
+<p>後來 VS Code 設定界面變得非常親民，非常貼近一般軟體的設定介面，有說明、選單、空格等等，只要按照說明就可以透過選擇選項、填上數值，來做到一些簡單的設定。</p>
+<p>不過因為可以調整的設定太多，整個界面很大，每次找我要的設定都要找一下下，雖然有搜尋系統，但還是沒有像直接修改 setting.json 那麼方便，所以我比較喜歡直接到 setting.json 檔案去進行設定，</p>
+<p>但是糟糕的是，從某一次更新開始，我竟然找不到進入全域 setting.json 的途徑了，每次都隨便亂按，從某個有提供連結的部分連過去。</p>
+<p>剛好趁這個機會，我也認真地摸索一下怎麼樣到 setting.json 比較快。</p>
+<ol>
+<li>點擊左下角齒輪，選擇「設定」</li>
+</ol>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-05-03-doc-language-setting-1.png?alt=media&token=61077fa3-bef1-415b-869f-55645373bbb8" alt="Alt text"></p>
+<ol start="2">
+<li>點擊右上角文件圖案進入 setting.json</li>
+</ol>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-05-03-doc-language-setting-2.png?alt=media&token=f0410c03-9221-41bc-a30a-57be43bfb5a1" alt="Alt text"></p>
+<p>原來 json.setting 的連結跑到右上角的文件圖案裡面了！</p>
+<h3 id="更改-setting-json"><a href="#更改-setting-json" class="headerlink" title="更改 setting.json"></a>更改 setting.json</h3><p>加入預設文件語言類型設定 <code>&quot;files.defaultLanguage&quot;: &quot;html&quot;</code></p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-05-03-doc-language-setting-3.png?alt=media&token=6a208186-9acc-438d-8b53-019c377f352f" alt="Alt text"></p>
+<p>記得上一個設定的結尾如果沒有「,」的話要補上，才不會發生 json 格式錯誤。</p>
+<p>這樣一來，直接開新檔案的時候，即使沒有副檔名，預設就是使用 HTML 語法了，Emmet 也可以順利使用。</p>
+<p>不過我自己在撰寫上更常發生的狀況是，網頁寫一寫，要新增一個 HTML 或 SCSS。這時候還有一個更方便的設定方式，就是 <code>&quot;files.defaultLanguage&quot;: &quot;$&#123;activeEditorLanguage&#125;&quot;</code>，使用這個設定值的話，新開的檔案格式就會和目前使用的檔案格式相同，和實際需要的情境更接近。</p>
 
     </div>
 
@@ -302,7 +301,7 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/blog/tags/w3HexSchool/" rel="tag"># w3HexSchool</a>
-              <a href="/blog/tags/CSS/" rel="tag"># CSS</a>
+              <a href="/blog/tags/VS-Code/" rel="tag"># VS Code</a>
           </div>
 
         
@@ -310,10 +309,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/blog/2020/03/29/2020-03-29-position/" rel="next" title="鼠年全馬鐵人挑戰 02：容易誤解的 position 特性">
-      鼠年全馬鐵人挑戰 02：容易誤解的 position 特性 <i class="fa fa-chevron-right"></i>
+    <a href="/blog/2020/04/26/2020-04-26-%20span-border/" rel="prev" title="鼠年全馬鐵人挑戰 06：假如 span 遇上 border-right？">
+      <i class="fa fa-chevron-left"></i> 鼠年全馬鐵人挑戰 06：假如 span 遇上 border-right？
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2020/05/10/2020-05-10-%20world-view/" rel="next" title="鼠年全馬鐵人挑戰 08：自己的世界觀">
+      鼠年全馬鐵人挑戰 08：自己的世界觀 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -374,7 +376,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E7%B4%A0%E8%A8%AD%E5%AE%9A-float-%E5%89%8D%E5%BE%8C%E7%9A%84%E8%A1%A8%E7%8F%BE"><span class="nav-number">1.</span> <span class="nav-text">元素設定 float 前後的表現</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ul-li-%E7%9A%84%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8B%95%E5%95%8F%E9%A1%8C"><span class="nav-number">2.</span> <span class="nav-text">ul li 的清除浮動問題</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%B2%E5%85%A5%E5%85%A8%E5%9F%9F%E8%A8%AD%E7%BD%AE-setting-json"><span class="nav-number">1.</span> <span class="nav-text">進入全域設置 setting.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9-setting-json"><span class="nav-number">2.</span> <span class="nav-text">更改 setting.json</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -508,7 +510,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'blog',
       owner       : 'bryanchu10',
       admin       : ['bryanchu10'],
-      id          : '2d7e5d860508212ef8ca3fd497289ab8',
+      id          : '75227030da99d8d213cc9bd82b043f6f',
         language: 'zh-TW',
       distractionFreeMode: true
     });
