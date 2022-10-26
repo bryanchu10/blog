@@ -30,21 +30,26 @@
   gtag('config', 'G-6F0RKYE4EY');
 </script>
 
-  <meta name="description" content="六角學院最近的一次課程更新，正式從基礎課程就開始介紹 flex 排版。原本就知道現在 flex 排版已經取得主流地位了，但是看到六角課程更新，還是讓我有一種 float 排版逐漸成為歷史遺跡的感覺，也回想起學習 float 排版的過程中踩到的那些坑，決定在告別 float 之前，把曾經困擾我的 float 問題記錄下來。">
+  <meta name="description" content="這週在回答關於 CSS 排版的提問的時候，碰到一個有趣的問題，先上 CodePen。  提問者的設計大概像這個 CodePen，連結列選項之間的分隔線沒有像 a 標籤的 hover 範圍高度那麼高，所以用 li 或 a 標籤的 border-right 無法作出這個設計。他的選項的文字包在 span 標籤中，用其中一個選項的 span 做出和文字高度相同的分隔線。 先不論使用 span 來作分隔線">
 <meta property="og:type" content="article">
-<meta property="og:title" content="鼠年全馬鐵人挑戰 01：曾經困擾我的 float 問題">
-<meta property="og:url" content="https://bryanchu10.github.io/blog/2020/03/22/2020-03-22-%20float-and-clearfix/index.html">
+<meta property="og:title" content="鼠年全馬鐵人挑戰 06：假如 span 遇上 border-right？">
+<meta property="og:url" content="https://bryanchu10.github.io/blog/2020/04/26/2020-04-26-span-border/index.html">
 <meta property="og:site_name" content="做點筆記吧">
-<meta property="og:description" content="六角學院最近的一次課程更新，正式從基礎課程就開始介紹 flex 排版。原本就知道現在 flex 排版已經取得主流地位了，但是看到六角課程更新，還是讓我有一種 float 排版逐漸成為歷史遺跡的感覺，也回想起學習 float 排版的過程中踩到的那些坑，決定在告別 float 之前，把曾經困擾我的 float 問題記錄下來。">
+<meta property="og:description" content="這週在回答關於 CSS 排版的提問的時候，碰到一個有趣的問題，先上 CodePen。  提問者的設計大概像這個 CodePen，連結列選項之間的分隔線沒有像 a 標籤的 hover 範圍高度那麼高，所以用 li 或 a 標籤的 border-right 無法作出這個設計。他的選項的文字包在 span 標籤中，用其中一個選項的 span 做出和文字高度相同的分隔線。 先不論使用 span 來作分隔線">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2020-03-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-10-05T00:58:58.801Z">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-26-span-border-1.png?alt=media&token=c2c047e1-12c9-4350-9892-f9a63248d195">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-26-span-border-2.png?alt=media&token=df67c1b0-7111-4097-9157-d81e835626d6">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-26-span-border-3.png?alt=media&token=d7a30fe5-201e-4a0e-b90d-38895201e2d4">
+<meta property="og:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-26-span-border-4.png?alt=media&token=9547d1dd-911a-40c6-a0bb-3325bedcfffc">
+<meta property="article:published_time" content="2020-04-25T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-05T00:59:15.849Z">
 <meta property="article:author" content="Bryan Chu">
 <meta property="article:tag" content="w3HexSchool">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-26-span-border-1.png?alt=media&token=c2c047e1-12c9-4350-9892-f9a63248d195">
 
-<link rel="canonical" href="https://bryanchu10.github.io/blog/2020/03/22/2020-03-22-%20float-and-clearfix/">
+<link rel="canonical" href="https://bryanchu10.github.io/blog/2020/04/26/2020-04-26-span-border/">
 
 
 <script id="page-configurations">
@@ -57,7 +62,7 @@
   };
 </script>
 
-  <title>鼠年全馬鐵人挑戰 01：曾經困擾我的 float 問題 | 做點筆記吧</title>
+  <title>鼠年全馬鐵人挑戰 06：假如 span 遇上 border-right？ | 做點筆記吧</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6F0RKYE4EY"></script>
     <script>
@@ -210,7 +215,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://bryanchu10.github.io/blog/2020/03/22/2020-03-22-%20float-and-clearfix/">
+    <link itemprop="mainEntityOfPage" href="https://bryanchu10.github.io/blog/2020/04/26/2020-04-26-span-border/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -223,7 +228,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          鼠年全馬鐵人挑戰 01：曾經困擾我的 float 問題
+          鼠年全馬鐵人挑戰 06：假如 span 遇上 border-right？
         </h1>
 
         <div class="post-meta">
@@ -233,14 +238,14 @@
               </span>
               <span class="post-meta-item-text">發表於</span>
 
-              <time title="創建時間：2020-03-22 00:00:00" itemprop="dateCreated datePublished" datetime="2020-03-22T00:00:00+08:00">2020-03-22</time>
+              <time title="創建時間：2020-04-26 00:00:00" itemprop="dateCreated datePublished" datetime="2020-04-26T00:00:00+08:00">2020-04-26</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2022-10-05 08:58:58" itemprop="dateModified" datetime="2022-10-05T08:58:58+08:00">2022-10-05</time>
+                <time title="修改時間：2022-10-05 08:59:15" itemprop="dateModified" datetime="2022-10-05T08:59:15+08:00">2022-10-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -263,35 +268,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>六角學院最近的一次課程更新，正式從基礎課程就開始介紹 flex 排版。原本就知道現在 flex 排版已經取得主流地位了，但是看到六角課程更新，還是讓我有一種 float 排版逐漸成為歷史遺跡的感覺，也回想起學習 float 排版的過程中踩到的那些坑，決定在告別 float 之前，把曾經困擾我的 float 問題記錄下來。</p>
+        <p>這週在回答關於 CSS 排版的提問的時候，碰到一個有趣的問題，先上 <a target="_blank" rel="noopener" href="https://codepen.io/bryanchu10/pen/abvJJEV">CodePen</a>。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-26-span-border-1.png?alt=media&token=c2c047e1-12c9-4350-9892-f9a63248d195" alt="Alt text"></p>
+<p>提問者的設計大概像這個 CodePen，連結列選項之間的分隔線沒有像 a 標籤的 hover 範圍高度那麼高，所以用 li 或 a 標籤的 border-right 無法作出這個設計。他的選項的文字包在 span 標籤中，用其中一個選項的 span 做出和文字高度相同的分隔線。</p>
+<p>先不論使用 span 來作分隔線是否是最佳選擇，提問者的問題是：為甚麼 border-right 沒有辦法和文字一樣高？</p>
 <span id="more"></span>
 
-<h3 id="元素設定-float-前後的表現"><a href="#元素設定-float-前後的表現" class="headerlink" title="元素設定 float 前後的表現"></a>元素設定 float 前後的表現</h3><ul>
-<li>區塊元素佔據的橫向空間</li>
-</ul>
-<p>因為太常使用 float 了，所以很容易忘記，原本區塊元素（block element）會佔據目前身處的容器中高度範圍內所有的橫向空間。即使對區塊元素設定 width，區塊元素還是會占滿整個元素空間。設定 width，只會影響到它的 content 寬度，並沒有辦法使其不佔據所有橫向空間。如果在同一層級再擺一個元素，因為區塊元素已經佔據自身高度內的橫向空間，新元素位置會在這個區塊元素的下一行。</p>
-<p>使用了 float 之後，元素佔據的橫向空間則會是 content 寬度 + padding 寬度 + border 寬度 + margin 寬度。</p>
-<ul>
-<li>行內元素的 display 設定</li>
-</ul>
-<p>行內元素（inline element）原本設定 width、height、margin-top、margin-bottom 不會產生效果，padding-top 與 padding-bottom 沒有辦法撐開空間。但是 float 之後會帶有區塊元素的特性，這時候上述無法發揮作用的屬性都可以運作。</p>
-<p>這邊容易忘記的是，因為 float 讓行內元素帶有區塊元素的特性，所以在程式碼撰寫上，如果有將行內元素轉成區塊元素的需求，又剛好已經有 float 設定，就不用再寫 <code>display: block</code> 了。</p>
-<h3 id="ul-li-的清除浮動問題"><a href="#ul-li-的清除浮動問題" class="headerlink" title="ul li 的清除浮動問題"></a>ul li 的清除浮動問題</h3><p>考慮一個簡單的<a target="_blank" rel="noopener" href="https://codepen.io/bryanchu10/pen/yLNxLOY">網頁架構</a>，在這個 CodePen 中，因為 h1 和 ul 都使用了 float，所以在 h1 和 ul 的父層元素 header 內部結尾處要清除浮動，確定 header 內部的浮動現象不會影響到 header 之外。在這邊使用偽元素的方式，在 header 標籤內加入 clearfix 這個類別選擇器後，header 的最後會產生一個可以清除浮動的偽元素。</p>
-<ul>
-<li>以浮動元素包裹浮動元素</li>
-</ul>
-<p>注意 header 內右側的連結列，不只是 ul 有使用 float，li 也有使用 float，於是產生的一個疑問：為甚麼不需要在 ul 內部結尾清除浮動，來避免 li 的浮動現象超出 ul 呢？</p>
-<p>原因是當父元素也使用了 float 的時候，子元素的 float 現象就不會影響到父元素之外，有人稱這個現象為「以浮制浮」。</p>
-<ul>
-<li>ul 架構規範</li>
-</ul>
-<p>在 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul">MDN web docs</a> ，ul 允許的內容是 </p>
-<blockquote>
-<p>Zero or more <code>&lt;li&gt;</code>, <code>&lt;script&gt;</code> and <code>&lt;template&gt;</code> elements.</p>
-</blockquote>
-<p>所以如果是這樣的架構</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>連結一<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>連結二<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>連結三<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span>&gt;</span>連結四<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;clearfix&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>以規範來說是有問題的。雖然我在注意到這個規範之前都是這樣寫，也沒有出過問題。不過因為這個原因，後來如果需要在 ul 清除浮動時，就改成用偽元素置入清除浮動的方式來迴避違規範了，例如 CodePen 中的 HTML 第 12-17 行。</p>
+<h3 id="line-height-無法影響-border-高度"><a href="#line-height-無法影響-border-高度" class="headerlink" title="line-height 無法影響 border 高度"></a>line-height 無法影響 border 高度</h3><p>第一時間我認為原因是圖片對齊文字的 baseline，沒有對齊 bottom，造成整個行列的高度受到影響，而 span 高度受整個行列高度影響，所以比文字還高。但是用開發者檢視工具看過之後發現 span 是純粹和文字互動，span 的高度就是比文字高。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-26-span-border-2.png?alt=media&token=df67c1b0-7111-4097-9157-d81e835626d6" alt="Alt text"></p>
+<p>我知道 span 是行內元素，只要讓它帶有區塊元素特性（轉成區塊元素，或是讓它浮動），border-right 的高度就一定會和盒模型高度相同。但是我想說 border-right 的高度應該是行內元素決定的，行內元素的高度又是 <code>line-height</code> 決定的，那麼應該實驗一下，設定了 <code>line-height</code> 的屬性值，是不是可以控制 border-right 的高度？</p>
+<p>結果竟然不行！（因為怕侵犯圖片版權，請自行腦補一張貓咪驚嚇的梗圖）。</p>
+<h3 id="字體是關鍵"><a href="#字體是關鍵" class="headerlink" title="字體是關鍵"></a>字體是關鍵</h3><p>我知道行內元素很多詭異的空間表現，都和文字的特性有關，像是圖片預設對齊 baseline 之類的等等。於是我靈機一動，難道現在 border-right 和文字高度不一致，竟然是字體的空隙嗎？於是我試著換上字面和字身設計幾乎一樣高的新細明體，果然 border-right 高度變成和文字一樣高了。</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-26-span-border-3.png?alt=media&token=d7a30fe5-201e-4a0e-b90d-38895201e2d4" alt="Alt text"></p>
+<p>border-right 本身是吃文字字身高度這件事可以理解，但是 line-height 無法影響 border-right 的高度讓我非常驚訝！試著找了一下關於 border 的說明文件，有沒有不建議使用在行內元素這一項，似乎也沒有。那麼，這真的是一個使用上要特別注意的小細節呢！</p>
+<h3 id="border-在行內元素出現的場合"><a href="#border-在行內元素出現的場合" class="headerlink" title="border 在行內元素出現的場合"></a>border 在行內元素出現的場合</h3><p>一開始我很難接受 border 高度和 <code>line-height</code> 無關的現象，但是後來想到在文件編排中有的時候會出現這樣的效果：</p>
+<p><img src="https://firebasestorage.googleapis.com/v0/b/blog-f0135.appspot.com/o/2020-04-26-span-border-4.png?alt=media&token=9547d1dd-911a-40c6-a0bb-3325bedcfffc" alt="Alt text"></p>
+<p>突然理解了為甚麼要設計 border 高度和 <code>line-height</code> 無關，在需要圈住文字的應用場合，border 高度和 <code>line-height</code> 無關反而才是我們想要的呈現方式。</p>
+<h3 id="補充資料"><a href="#補充資料" class="headerlink" title="補充資料"></a>補充資料</h3><p>關於字面、字身的介紹，可以參考 justfont 的部落格文章<a target="_blank" rel="noopener" href="https://blog.justfont.com/2012/12/hanzi-type-design-1/">字型設計自己來─中文字型設計的第一課</a>。</p>
 
     </div>
 
@@ -310,10 +303,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/blog/2020/03/29/2020-03-29-%20position/" rel="next" title="鼠年全馬鐵人挑戰 02：容易誤解的 position 特性">
-      鼠年全馬鐵人挑戰 02：容易誤解的 position 特性 <i class="fa fa-chevron-right"></i>
+    <a href="/blog/2020/04/19/2020-04-19-customed-select-box-2/" rel="prev" title="鼠年全馬鐵人挑戰 05：自製 select 選單樣式（下）- 選單展開收闔">
+      <i class="fa fa-chevron-left"></i> 鼠年全馬鐵人挑戰 05：自製 select 選單樣式（下）- 選單展開收闔
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2020/05/03/2020-05-03-doc-language-setting/" rel="next" title="鼠年全馬鐵人挑戰 07：預設 VS Code 新檔案使用語法">
+      鼠年全馬鐵人挑戰 07：預設 VS Code 新檔案使用語法 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -374,7 +370,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E7%B4%A0%E8%A8%AD%E5%AE%9A-float-%E5%89%8D%E5%BE%8C%E7%9A%84%E8%A1%A8%E7%8F%BE"><span class="nav-number">1.</span> <span class="nav-text">元素設定 float 前後的表現</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ul-li-%E7%9A%84%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8B%95%E5%95%8F%E9%A1%8C"><span class="nav-number">2.</span> <span class="nav-text">ul li 的清除浮動問題</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#line-height-%E7%84%A1%E6%B3%95%E5%BD%B1%E9%9F%BF-border-%E9%AB%98%E5%BA%A6"><span class="nav-number">1.</span> <span class="nav-text">line-height 無法影響 border 高度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E9%AB%94%E6%98%AF%E9%97%9C%E9%8D%B5"><span class="nav-number">2.</span> <span class="nav-text">字體是關鍵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#border-%E5%9C%A8%E8%A1%8C%E5%85%A7%E5%85%83%E7%B4%A0%E5%87%BA%E7%8F%BE%E7%9A%84%E5%A0%B4%E5%90%88"><span class="nav-number">3.</span> <span class="nav-text">border 在行內元素出現的場合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A3%9C%E5%85%85%E8%B3%87%E6%96%99"><span class="nav-number">4.</span> <span class="nav-text">補充資料</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -508,7 +504,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'blog',
       owner       : 'bryanchu10',
       admin       : ['bryanchu10'],
-      id          : '2f9bb9e7271236c1299562ca4a4cc3f5',
+      id          : 'da7168ed5d51839e6a1ba6f8ef801a73',
         language: 'zh-TW',
       distractionFreeMode: true
     });
