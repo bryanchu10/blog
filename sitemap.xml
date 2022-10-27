@@ -20,15 +20,6 @@
   </url>
   
   <url>
-    <loc>https://bryanchu10.github.io/blog/2020/05/10/2020-05-10-world-view/</loc>
-    
-    <lastmod>2022-10-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://bryanchu10.github.io/blog/2020/05/03/2020-05-03-doc-language-setting/</loc>
     
     <lastmod>2022-10-05</lastmod>
@@ -103,36 +94,36 @@
 
   <url>
     <loc>https://bryanchu10.github.io/blog</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://bryanchu10.github.io/blog/tags/JS/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <loc>https://bryanchu10.github.io/blog/tags/w3HexSchool/</loc>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://bryanchu10.github.io/blog/tags/w3HexSchool/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <loc>https://bryanchu10.github.io/blog/tags/JS/</loc>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://bryanchu10.github.io/blog/tags/CSS/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://bryanchu10.github.io/blog/tags/VS-Code/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -141,7 +132,7 @@
   
   <url>
     <loc>https://bryanchu10.github.io/blog/categories/%E9%BC%A0%E5%B9%B4%E5%85%A8%E9%A6%AC%E9%90%B5%E4%BA%BA%E6%8C%91%E6%88%B0/</loc>
-    <lastmod>2022-10-26</lastmod>
+    <lastmod>2022-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
